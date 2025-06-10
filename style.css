@@ -1,0 +1,31 @@
+/* Общие стили */
+html { 
+    scroll-behavior: smooth; 
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.smooth-transition { 
+    transition: all 0.3s ease-in-out; 
+}
+
+/* Свечение для текста портфолио */
+.glow-text { 
+    /* Заменяем theme() на реальный цвет */
+    text-shadow: 0 0 15px #F7A027, 0 0 25px rgba(247, 160, 39, 0.5); 
+}
+
+/* Стили для элементов с анимацией */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
