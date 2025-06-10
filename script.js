@@ -7,10 +7,8 @@ document.addEventListener('DOMContentLoaded', function() {
         header.addEventListener('click', () => {
             const icon = header.querySelector('svg');
             const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
-            // Закрываем все
             document.querySelectorAll('.accordion-content').forEach(el => el.style.maxHeight = '0px');
             document.querySelectorAll('.accordion-header svg').forEach(svg => svg.style.transform = 'rotate(0deg)');
-            // Открываем текущий, если он был закрыт
             if (!isOpen) {
                 content.style.maxHeight = content.scrollHeight + 'px';
                 if(icon) icon.style.transform = 'rotate(45deg)';
