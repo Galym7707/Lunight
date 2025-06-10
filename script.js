@@ -7,8 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
         header.addEventListener('click', () => {
             const icon = header.querySelector('svg');
             const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+            // Закрываем все
             document.querySelectorAll('.accordion-content').forEach(el => el.style.maxHeight = '0px');
             document.querySelectorAll('.accordion-header svg').forEach(svg => svg.style.transform = 'rotate(0deg)');
+            // Открываем текущий, если он был закрыт
             if (!isOpen) {
                 content.style.maxHeight = content.scrollHeight + 'px';
                 if(icon) icon.style.transform = 'rotate(45deg)';
@@ -44,39 +46,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-    // --- Логика для анкеты-бота ---
-    const openBtn = document.getElementById('open-brief-modal');
-    const closeBtn = document.getElementById('close-brief-modal');
-    const modal = document.getElementById('brief-modal');
-    const modalContent = document.getElementById('brief-modal-content');
-    
-    const budgetSlider = document.getElementById('budget');
-    const budgetValue = document.getElementById('budget-value');
-
-    if(budgetSlider && budgetValue) {
-        budgetSlider.addEventListener('input', (e) => {
-            budgetValue.textContent = `~${Number(e.target.value).toLocaleString('ru-RU')}₽`;
-        });
-    }
-
-    const toggleModal = (show) => {
-        if (show) {
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                modal.classList.remove('opacity-0');
-                modalContent.classList.remove('scale-95');
-            }, 10);
-        } else {
-            modal.classList.add('opacity-0');
-            modalContent.classList.add('scale-95');
-            setTimeout(() => modal.classList.add('hidden'), 300);
-        }
-    };
-
-    if(openBtn) openBtn.addEventListener('click', () => toggleModal(true));
-    if(closeBtn) closeBtn.addEventListener('click', () => toggleModal(false));
-    if(modal) modal.addEventListener('click', (e) => {
-        if(e.target === modal) toggleModal(false);
-    });
 });
