@@ -67,6 +67,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const langSwitcher = document.getElementById('lang-switcher');
     const langSwitcherText = document.getElementById('lang-switcher-text');
 
+    // --- ИСПРАВЛЕННАЯ функция для смены языка в Tawk.to ---
+    const setTawkLanguage = (lang) => {
+        if (window.Tawk_API && window.Tawk_API.onReady) {
+            window.Tawk_API.setAttributes({ 'language': lang }, function(error){
+                if (error) console.error('Tawk.to setAttributes error:', error);
+            });
+        }
+    };
+
     // --- Функция для смены языка ---
     const setLanguage = (lang) => {
         if (!translations[lang]) return;
@@ -96,13 +105,17 @@ document.addEventListener('DOMContentLoaded', function() {
         
         currentLangIndex = languages.indexOf(lang);
 
-        if (window.Tawk_API && typeof window.Tawk_API.setAttributes === 'function') {
-            window.Tawk_API.setAttributes({ 'language': lang }, function(error){
-                if (error) console.error('Tawk.to setAttributes error:', error);
-            });
-        }
+        setTawkLanguage(lang);
+    };
+    
+    // Дожидаемся полной готовности Tawk.to и затем устанавливаем язык
+    window.Tawk_API.onLoad = function(){
+        const currentLang = localStorage.getItem('language') || 'en';
+        setTawkLanguage(currentLang);
     };
 
+
+    // --- Логика для переключателя языка ---
     if (langSwitcher) {
         langSwitcher.addEventListener('click', () => {
             currentLangIndex = (currentLangIndex + 1) % languages.length;
@@ -111,6 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // --- Изначальная установка языка при загрузке страницы ---
     const initialLang = localStorage.getItem('language') || 'en';
     setLanguage(initialLang);
     
