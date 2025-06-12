@@ -249,21 +249,29 @@
             </div>
         </div>
     </footer>
-
-    <script src="script.js"></script>
-
-    <!--Start of Tawk.to Script-->
+    
+    // Tawk.to
     <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    
+    // Динамическая смена цвета по теме
+    Tawk_API.onLoad = function () {
+        const isDark = document.documentElement.classList.contains('dark');
+        Tawk_API.setAttributes({
+            widgetColor: isDark ? '#F7A027' : '#2B328B'
+        }, function(error){});
+    };
+    
+    // Стандартная загрузка скрипта
     (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/684aee346afa6c19102b3486/1itib4vrf';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
+        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/684aee346afa6c19102b3486/1itib4vrf';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1, s0);
     })();
     </script>
-    <!--End of Tawk.to Script-->
+
 </body>
 </html>
