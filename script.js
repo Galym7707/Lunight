@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
             footer_portfolio: "Portfolio", footer_case_studies: "Case Studies", footer_clients: "Clients", footer_testimonials: "Testimonials",
             footer_company: "Company", footer_about: "About", footer_careers: "Careers", footer_blog: "Blog",
             footer_contact: "Contact", footer_email: "Email", footer_locations: "Locations", footer_faq: "FAQ",
+            tooltip_lang: "Change language",
         },
         ru: {
             nav_services: "Услуги", nav_portfolio: "Портфолио", nav_contact: "Контакты", nav_contact_us: "Связаться",
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             footer_portfolio: "Портфолио", footer_case_studies: "Кейсы", footer_clients: "Клиенты", footer_testimonials: "Отзывы",
             footer_company: "Компания", footer_about: "О нас", footer_careers: "Карьера", footer_blog: "Блог",
             footer_contact: "Контакты", footer_email: "Почта", footer_locations: "Локации", footer_faq: "FAQ",
+            tooltip_lang: "Сменить язык",
         },
         kz: {
             nav_services: "Қызметтер", nav_portfolio: "Портфолио", nav_contact: "Байланыс", nav_contact_us: "Байланысу",
@@ -55,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
             footer_portfolio: "Портфолио", footer_case_studies: "Кейстер", footer_clients: "Клиенттер", footer_testimonials: "Пікірлер",
             footer_company: "Компания", footer_about: "Біз туралы", footer_careers: "Мансап", footer_blog: "Блог",
             footer_contact: "Байланыс", footer_email: "Пошта", footer_locations: "Орналасқан жерлер", footer_faq: "ЖҚС",
+            tooltip_lang: "Тілді өзгерту",
         }
     };
 
@@ -62,13 +65,12 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentLangIndex = 0;
 
     const langSwitcher = document.getElementById('lang-switcher');
+    const langSwitcherText = document.getElementById('lang-switcher-text');
 
     // --- Функция для смены языка ---
     const setLanguage = (lang) => {
-        // Проверяем, существует ли язык в наших переводах
         if (!translations[lang]) return;
 
-        // Обновляем текст
         document.querySelectorAll('[data-lang-key]').forEach(el => {
             const key = el.getAttribute('data-lang-key');
             if (translations[lang][key]) {
@@ -80,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        // Обновляем плейсхолдеры
         document.querySelectorAll('[data-lang-placeholder]').forEach(el => {
             const key = el.getAttribute('data-lang-placeholder');
              if (translations[lang] && translations[lang][key]) {
@@ -91,13 +92,10 @@ document.addEventListener('DOMContentLoaded', function() {
         document.documentElement.lang = lang;
         localStorage.setItem('language', lang);
         
-        // Обновляем текст кнопки
-        if(langSwitcher) langSwitcher.textContent = lang.toUpperCase();
+        if(langSwitcherText) langSwitcherText.textContent = lang.toUpperCase();
         
-        // Находим индекс текущего языка для следующего переключения
         currentLangIndex = languages.indexOf(lang);
 
-        // --- Смена языка в Tawk.to ---
         if (window.Tawk_API && typeof window.Tawk_API.setAttributes === 'function') {
             window.Tawk_API.setAttributes({ 'language': lang }, function(error){
                 if (error) console.error('Tawk.to setAttributes error:', error);
@@ -105,7 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
-    // --- Логика для переключателя языка ---
     if (langSwitcher) {
         langSwitcher.addEventListener('click', () => {
             currentLangIndex = (currentLangIndex + 1) % languages.length;
@@ -114,7 +111,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Изначальная установка языка при загрузке страницы ---
     const initialLang = localStorage.getItem('language') || 'en';
     setLanguage(initialLang);
     
