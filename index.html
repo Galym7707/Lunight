@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lunight - Experts at your side</title>
     
+    <!-- Подключение Tailwind CSS (внешняя библиотека) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Подключение шрифта Inter с Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Подключение вашего файла стилей -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- ВАЖНО: Этот блок - конфигурация для Tailwind CSS. Его нельзя переносить. -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -47,6 +51,7 @@
 </head>
 <body class="bg-white text-brand-gray-800 dark:bg-brand-blue dark:text-white">
 
+    <!-- ===== Шапка сайта (Header) ===== -->
     <header class="py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center sticky top-0 left-0 right-0 z-50 border-b border-gray-200/20 dark:border-white/10 bg-white/80 dark:bg-brand-blue/80 backdrop-blur-sm">
         <a href="#hero" class="text-2xl font-bold text-brand-gray-800 dark:text-white">
             Lunight®
@@ -250,18 +255,22 @@
         </div>
     </footer>
 
-   <!--Start of Tawk.to Script-->
+    <!-- Подключение вашего файла со скриптами -->
+    <script src="script.js"></script>
+    
+    <!--Start of Tawk.to Script-->
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
     var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
     s1.async=true;
-    s1.src='https://embed.tawk.to/684aee346afa6c19102b3486/1itib4vrf';
+    s1.src='https://embed.tawk.to/6665d1099a809f19fb3c8466/1i001m0r9';
     s1.charset='UTF-8';
     s1.setAttribute('crossorigin','*');
     s0.parentNode.insertBefore(s1,s0);
     })();
     </script>
     <!--End of Tawk.to Script-->
+
 </body>
 </html>
