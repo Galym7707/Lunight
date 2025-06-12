@@ -26,7 +26,30 @@ body {
     transform: translateY(0);
 }
 
-/* Стили для плавной смены языка */
 [data-lang-key] {
     transition: opacity 0.2s ease-in-out;
+}
+
+/* Стили для всплывающей подсказки */
+.tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 8px;
+    background-color: #1F2937;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
+}
+
+.group:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
 }
