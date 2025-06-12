@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="ru" class="">
+<!-- Язык по умолчанию будет устанавливаться скриптом -->
+<html lang="en" class="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lunight - Experts at your side</title>
     
-    <!-- Подключение Tailwind CSS (внешняя библиотека) -->
+    <!-- Подключение Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Подключение шрифта Inter с Google Fonts -->
+    <!-- Подключение шрифта Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Подключение вашего файла стилей -->
+    <!-- Подключение файла стилей -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- ВАЖНО: Этот блок - конфигурация для Tailwind CSS. Его нельзя переносить. -->
+    <!-- Конфигурация Tailwind CSS -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -26,11 +27,8 @@
                         'brand-blue': '#2B328B',
                         'brand-orange': '#F7A027',
                         'brand-gray': { 
-                            100: '#F3F4F6',
-                            200: '#E5E7EB',
-                            400: '#9CA3AF',
-                            500: '#6B7280',
-                            800: '#1F2937'
+                            100: '#F3F4F6', 200: '#E5E7EB', 400: '#9CA3AF', 
+                            500: '#6B7280', 800: '#1F2937' 
                         },
                         'dark-card': '#4A5568',
                         'dark-bg-card': 'rgba(255, 255, 255, 0.1)',
@@ -56,25 +54,28 @@
         <a href="#hero" class="text-2xl font-bold text-brand-gray-800 dark:text-white">
             Lunight®
         </a>
-        <div class="flex items-center space-x-4 sm:space-x-6">
+        <div class="flex items-center space-x-2 sm:space-x-4">
             <nav class="hidden md:flex items-center space-x-8" id="main-nav">
-                <a href="#services" class="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white smooth-transition">Services</a>
-                <a href="#portfolio" class="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white smooth-transition">Portfolio</a>
-                <a href="#contact" class="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white smooth-transition">Contact</a>
+                <a href="#services" class="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white smooth-transition" data-lang-key="nav_services"></a>
+                <a href="#portfolio" class="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white smooth-transition" data-lang-key="nav_portfolio"></a>
+                <a href="#contact" class="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white smooth-transition" data-lang-key="nav_contact"></a>
             </nav>
+            <!-- Переключатель языков -->
+            <button id="lang-switcher" class="p-2 w-12 text-center font-semibold text-gray-600 dark:text-gray-300 rounded-md hover:bg-gray-200 dark:hover:bg-white/20 smooth-transition"></button>
+            
             <button id="theme-toggle" class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-white/20 smooth-transition">
                 <svg id="theme-toggle-dark-icon" class="h-5 w-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                 <svg id="theme-toggle-light-icon" class="h-5 w-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 14.95a1 1 0 010-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414 0zM3 11a1 1 0 100-2H2a1 1 0 100 2h1z"></path></svg>
             </button>
-            <a href="#contact" class="bg-black dark:bg-white text-white dark:text-black px-5 py-2 rounded-full font-semibold text-sm hover:bg-gray-800 dark:hover:bg-gray-200 smooth-transition">Contact us</a>
+            <a href="#contact" class="bg-black dark:bg-white text-white dark:text-black px-5 py-2 rounded-full font-semibold text-sm hover:bg-gray-800 dark:hover:bg-gray-200 smooth-transition" data-lang-key="nav_contact_us"></a>
         </div>
     </header>
 
     <main>
         <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-4">
             <div class="reveal">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-brand-gray-800 dark:text-white">Lunight</h1>
-                <p class="text-lg sm:text-xl md:text-2xl text-gray-500 dark:text-brand-orange mt-3 font-semibold">Experts at your side.</p>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-brand-gray-800 dark:text-white" data-lang-key="hero_title"></h1>
+                <p class="text-lg sm:text-xl md:text-2xl text-gray-500 dark:text-brand-orange mt-3 font-semibold" data-lang-key="hero_subtitle"></p>
             </div>
         </section>
 
@@ -86,8 +87,8 @@
                             <div class="w-24 h-24 bg-white dark:bg-transparent rounded-xl flex items-center justify-center mx-auto mb-6">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-300 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect></svg>
                             </div>
-                            <p class="text-gray-500 dark:text-white/80 text-sm">Secure</p>
-                            <h3 class="text-xl font-bold mt-1 text-brand-gray-800 dark:text-white">Custom code</h3>
+                            <p class="text-gray-500 dark:text-white/80 text-sm" data-lang-key="services_secure"></p>
+                            <h3 class="text-xl font-bold mt-1 text-brand-gray-800 dark:text-white" data-lang-key="services_custom_code"></h3>
                         </div>
                     </div>
                     <div class="reveal bg-brand-gray-100 dark:bg-brand-orange p-8 rounded-2xl flex flex-col justify-between h-full hover:shadow-2xl hover:-translate-y-2 smooth-transition" style="transition-delay: 100ms;">
@@ -95,8 +96,8 @@
                             <div class="w-24 h-24 bg-white dark:bg-transparent rounded-xl flex items-center justify-center mx-auto mb-6">
                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-300 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle></svg>
                             </div>
-                            <p class="text-gray-500 dark:text-white/80 text-sm">Fast</p>
-                            <h3 class="text-xl font-bold mt-1 text-brand-gray-800 dark:text-white">Quick launch</h3>
+                            <p class="text-gray-500 dark:text-white/80 text-sm" data-lang-key="services_fast"></p>
+                            <h3 class="text-xl font-bold mt-1 text-brand-gray-800 dark:text-white" data-lang-key="services_quick_launch"></h3>
                         </div>
                     </div>
                     <div class="reveal bg-brand-gray-100 dark:bg-brand-orange p-8 rounded-2xl flex flex-col justify-between h-full hover:shadow-2xl hover:-translate-y-2 smooth-transition" style="transition-delay: 200ms;">
@@ -104,8 +105,8 @@
                              <div class="w-24 h-24 bg-white dark:bg-transparent rounded-xl flex items-center justify-center mx-auto mb-6">
                                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-gray-300 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 2 L2 22 L22 22 Z"></path></svg>
                             </div>
-                           <p class="text-gray-500 dark:text-white/80 text-sm">Support</p>
-                           <h3 class="text-xl font-bold mt-1 text-brand-gray-800 dark:text-white">Reliable care</h3>
+                           <p class="text-gray-500 dark:text-white/80 text-sm" data-lang-key="services_support"></p>
+                           <h3 class="text-xl font-bold mt-1 text-brand-gray-800 dark:text-white" data-lang-key="services_reliable_care"></h3>
                         </div>
                     </div>
                 </div>
@@ -115,7 +116,7 @@
         <section id="portfolio" class="py-20 lg:py-32 px-4">
             <div class="container mx-auto reveal">
                 <div class="text-center mb-12 md:mb-16">
-                     <h2 class="text-3xl md:text-4xl font-bold text-brand-gray-800 dark:text-brand-orange glow-text">Our Portfolio</h2>
+                     <h2 class="text-3xl md:text-4xl font-bold text-brand-gray-800 dark:text-brand-orange glow-text" data-lang-key="portfolio_title"></h2>
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
                     <div class="bg-gray-200 dark:bg-dark-card rounded-2xl aspect-square hover:scale-105 smooth-transition"></div>
@@ -128,13 +129,13 @@
         
         <section id="certificates" class="py-20 lg:py-32 px-4">
             <div class="container mx-auto max-w-4xl reveal">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-brand-gray-800 dark:text-white">Certificates</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-brand-gray-800 dark:text-white" data-lang-key="certificates_title"></h2>
                 <div class="space-y-4">
-                    <div class="flex items-center justify-between py-4 border-b border-brand-gray-200 dark:border-white/20"><span class="font-semibold text-base md:text-lg">1. Awesome Certificate</span><span class="text-brand-gray-400 dark:text-gray-300">2020</span></div>
-                    <div class="flex items-center justify-between py-4 border-b border-brand-gray-200 dark:border-white/20"><span class="font-semibold text-base md:text-lg">2. Pro Coder Diploma</span><span class="text-brand-gray-400 dark:text-gray-300">2021</span></div>
-                    <div class="flex items-center justify-between py-4 border-b border-brand-gray-200 dark:border-white/20"><span class="font-semibold text-base md:text-lg">3. Master of Frameworks</span><span class="text-brand-gray-400 dark:text-gray-300">2022</span></div>
-                    <div class="flex items-center justify-between py-4 border-b border-brand-gray-200 dark:border-white/20"><span class="font-semibold text-base md:text-lg">4. UI/UX Ninja Award</span><span class="text-brand-gray-400 dark:text-gray-300">2024</span></div>
-                    <div class="flex items-center justify-between py-4 border-b border-brand-gray-200 dark:border-white/20"><span class="font-semibold text-base md:text-lg">5. Legendary Developer</span><span class="text-brand-gray-400 dark:text-gray-300">2025</span></div>
+                    <div class="flex items-center justify-between py-4 border-b border-brand-gray-200 dark:border-white/20"><span class="font-semibold text-base md:text-lg" data-lang-key="cert_1"></span><span class="text-brand-gray-400 dark:text-gray-300">2020</span></div>
+                    <div class="flex items-center justify-between py-4 border-b border-brand-gray-200 dark:border-white/20"><span class="font-semibold text-base md:text-lg" data-lang-key="cert_2"></span><span class="text-brand-gray-400 dark:text-gray-300">2021</span></div>
+                    <div class="flex items-center justify-between py-4 border-b border-brand-gray-200 dark:border-white/20"><span class="font-semibold text-base md:text-lg" data-lang-key="cert_3"></span><span class="text-brand-gray-400 dark:text-gray-300">2022</span></div>
+                    <div class="flex items-center justify-between py-4 border-b border-brand-gray-200 dark:border-white/20"><span class="font-semibold text-base md:text-lg" data-lang-key="cert_4"></span><span class="text-brand-gray-400 dark:text-gray-300">2024</span></div>
+                    <div class="flex items-center justify-between py-4 border-b border-brand-gray-200 dark:border-white/20"><span class="font-semibold text-base md:text-lg" data-lang-key="cert_5"></span><span class="text-brand-gray-400 dark:text-gray-300">2025</span></div>
                 </div>
             </div>
         </section>
@@ -144,17 +145,17 @@
                 <div class="space-y-4" id="faq-accordion">
                      <div class="accordion-item bg-brand-gray-100 dark:bg-dark-bg-card rounded-xl">
                         <button class="accordion-header w-full flex justify-between items-center text-left p-5 font-semibold text-base md:text-lg smooth-transition hover:bg-gray-200/70 dark:hover:bg-white/20 rounded-xl">
-                            <span class="text-brand-gray-800 dark:text-white">What services does Lunight offer?</span>
+                            <span class="text-brand-gray-800 dark:text-white" data-lang-key="faq_q1"></span>
                             <svg class="w-6 h-6 shrink-0 smooth-transition text-brand-gray-800 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                         </button>
-                        <div class="accordion-content max-h-0 overflow-hidden smooth-transition"><p class="p-5 pt-0 text-gray-600 dark:text-gray-300">We offer a wide range of services including custom software development, web application design, mobile app creation, and ongoing technical support to ensure your project's success.</p></div>
+                        <div class="accordion-content max-h-0 overflow-hidden smooth-transition"><p class="p-5 pt-0 text-gray-600 dark:text-gray-300" data-lang-key="faq_a1"></p></div>
                     </div>
                     <div class="accordion-item bg-brand-gray-100 dark:bg-dark-bg-card rounded-xl">
                         <button class="accordion-header w-full flex justify-between items-center text-left p-5 font-semibold text-base md:text-lg smooth-transition hover:bg-gray-200/70 dark:hover:bg-white/20 rounded-xl">
-                            <span class="text-brand-gray-800 dark:text-white">What is your project workflow?</span>
+                            <span class="text-brand-gray-800 dark:text-white" data-lang-key="faq_q2"></span>
                             <svg class="w-6 h-6 shrink-0 smooth-transition text-brand-gray-800 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                         </button>
-                        <div class="accordion-content max-h-0 overflow-hidden smooth-transition"><p class="p-5 pt-0 text-gray-600 dark:text-gray-300">Our workflow is collaborative and transparent. We start with a detailed discovery phase, followed by design, development, testing, and deployment, with constant client communication.</p></div>
+                        <div class="accordion-content max-h-0 overflow-hidden smooth-transition"><p class="p-5 pt-0 text-gray-600 dark:text-gray-300" data-lang-key="faq_a2"></p></div>
                     </div>
                 </div>
             </div>
@@ -162,11 +163,11 @@
 
         <section id="testimonials" class="py-20 lg:py-32 px-4">
             <div class="container mx-auto reveal">
-                <div class="text-center"><h2 class="text-3xl md:text-4xl font-bold text-brand-gray-800 dark:text-white">What clients say</h2><p class="text-lg md:text-xl text-gray-500 dark:text-brand-orange mt-2 font-semibold">Trusted by businesses worldwide.</p></div>
+                <div class="text-center"><h2 class="text-3xl md:text-4xl font-bold text-brand-gray-800 dark:text-white" data-lang-key="testimonials_title"></h2><p class="text-lg md:text-xl text-gray-500 dark:text-brand-orange mt-2 font-semibold" data-lang-key="testimonials_subtitle"></p></div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 md:mt-16">
-                    <div class="bg-brand-gray-100 dark:bg-white p-8 rounded-2xl flex flex-col justify-between h-full"><p class="text-gray-600 dark:text-brand-gray-800">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum, ante in ultricies rutrum, augue erat imperdiet nulla, eu consequat nibh dui sit amet turpis."</p><p class="mt-6 font-bold text-sm text-gray-500 dark:text-gray-600">CTO, Lorem</p></div>
-                    <div class="bg-brand-gray-100 dark:bg-white p-8 rounded-2xl flex flex-col justify-between h-full"><p class="text-gray-600 dark:text-brand-gray-800">"Fusce varius, ligula ut sodales tincidunt, nisl nisi finibus justo, id scelerisque leo libero a ipsum. Maecenas ac erat at sem consequat feugiat."</p><p class="mt-6 font-bold text-sm text-gray-500 dark:text-gray-600">Manager, Fusce</p></div>
-                    <div class="bg-brand-gray-100 dark:bg-white p-8 rounded-2xl flex flex-col justify-between h-full"><p class="text-gray-600 dark:text-brand-gray-800">"Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus quis ex sed magna auctor congue."</p><p class="mt-6 font-bold text-sm text-gray-500 dark:text-gray-600">CEO, Pellentesque</p></div>
+                    <div class="bg-brand-gray-100 dark:bg-white p-8 rounded-2xl flex flex-col justify-between h-full"><p class="text-gray-600 dark:text-brand-gray-800" data-lang-key="testimonial_1"></p><p class="mt-6 font-bold text-sm text-gray-500 dark:text-gray-600">CTO, Lorem</p></div>
+                    <div class="bg-brand-gray-100 dark:bg-white p-8 rounded-2xl flex flex-col justify-between h-full"><p class="text-gray-600 dark:text-brand-gray-800" data-lang-key="testimonial_2"></p><p class="mt-6 font-bold text-sm text-gray-500 dark:text-gray-600">Manager, Fusce</p></div>
+                    <div class="bg-brand-gray-100 dark:bg-white p-8 rounded-2xl flex flex-col justify-between h-full"><p class="text-gray-600 dark:text-brand-gray-800" data-lang-key="testimonial_3"></p><p class="mt-6 font-bold text-sm text-gray-500 dark:text-gray-600">CEO, Pellentesque</p></div>
                 </div>
             </div>
         </section>
@@ -180,24 +181,24 @@
         <section id="contact" class="py-20 lg:py-32 px-4">
             <div class="container mx-auto max-w-2xl reveal">
                 <div class="text-center">
-                     <h2 class="text-3xl md:text-4xl font-bold text-brand-gray-800 dark:text-white">Contact Lunight</h2>
-                     <p class="text-lg md:text-xl text-gray-500 dark:text-brand-orange mt-2 font-semibold">Let's discuss your project</p>
+                     <h2 class="text-3xl md:text-4xl font-bold text-brand-gray-800 dark:text-white" data-lang-key="contact_title"></h2>
+                     <p class="text-lg md:text-xl text-gray-500 dark:text-brand-orange mt-2 font-semibold" data-lang-key="contact_subtitle"></p>
                 </div>
                 <form id="contact-form" class="mt-12 md:mt-16 space-y-6">
                     <div>
-                        <label for="name" class="sr-only">Name</label>
-                        <input type="text" id="name" placeholder="Name" class="w-full bg-brand-gray-100 dark:bg-white border-transparent rounded-xl p-4 text-brand-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-brand-orange">
+                        <label for="name" class="sr-only" data-lang-key="form_name"></label>
+                        <input type="text" id="name" class="w-full bg-brand-gray-100 dark:bg-white border-transparent rounded-xl p-4 text-brand-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-brand-orange" data-lang-placeholder="form_name">
                     </div>
                      <div>
-                        <label for="email" class="sr-only">Email</label>
-                        <input type="email" id="email" placeholder="Email" class="w-full bg-brand-gray-100 dark:bg-white border-transparent rounded-xl p-4 text-brand-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-brand-orange">
+                        <label for="email" class="sr-only" data-lang-key="form_email"></label>
+                        <input type="email" id="email" class="w-full bg-brand-gray-100 dark:bg-white border-transparent rounded-xl p-4 text-brand-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-brand-orange" data-lang-placeholder="form_email">
                     </div>
                      <div>
-                        <label for="message" class="sr-only">Message</label>
-                        <textarea id="message" rows="5" placeholder="Message" class="w-full bg-brand-gray-100 dark:bg-white border-transparent rounded-xl p-4 text-brand-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-brand-orange"></textarea>
+                        <label for="message" class="sr-only" data-lang-key="form_message"></label>
+                        <textarea id="message" rows="5" class="w-full bg-brand-gray-100 dark:bg-white border-transparent rounded-xl p-4 text-brand-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-brand-orange" data-lang-placeholder="form_message"></textarea>
                     </div>
                     <div>
-                        <button type="submit" class="w-full bg-black dark:bg-brand-orange text-white px-6 py-4 rounded-xl font-semibold hover:bg-gray-800 dark:hover:opacity-90 smooth-transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-orange">Submit</button>
+                        <button type="submit" class="w-full bg-black dark:bg-brand-orange text-white px-6 py-4 rounded-xl font-semibold hover:bg-gray-800 dark:hover:opacity-90 smooth-transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-orange" data-lang-key="form_submit"></button>
                     </div>
                 </form>
             </div>
@@ -219,35 +220,35 @@
                 </div>
                 <div class="lg:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-8">
                     <div class="text-sm">
-                        <h4 class="font-bold mb-4 text-brand-gray-800 dark:text-white">Services</h4>
+                        <h4 class="font-bold mb-4 text-brand-gray-800 dark:text-white" data-lang-key="footer_services"></h4>
                         <ul class="space-y-3 text-gray-500 dark:text-gray-400">
-                            <li><a href="#services" class="hover:text-brand-gray-800 dark:hover:text-white">Development</a></li>
-                            <li><a href="#services" class="hover:text-brand-gray-800 dark:hover:text-white">Consulting</a></li>
-                            <li><a href="#services" class="hover:text-brand-gray-800 dark:hover:text-white">Support</a></li>
+                            <li><a href="#services" class="hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_development"></a></li>
+                            <li><a href="#services" class="hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_consulting"></a></li>
+                            <li><a href="#services" class="hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_support"></a></li>
                         </ul>
                     </div>
                     <div class="text-sm">
-                        <h4 class="font-bold mb-4 text-brand-gray-800 dark:text-white">Portfolio</h4>
+                        <h4 class="font-bold mb-4 text-brand-gray-800 dark:text-white" data-lang-key="footer_portfolio"></h4>
                         <ul class="space-y-3 text-gray-500 dark:text-gray-400">
-                            <li><a href="#portfolio" class="hover:text-brand-gray-800 dark:hover:text-white">Case Studies</a></li>
-                            <li><a href="#testimonials" class="hover:text-brand-gray-800 dark:hover:text-white">Clients</a></li>
-                            <li><a href="#testimonials" class="hover:text-brand-gray-800 dark:hover:text-white">Testimonials</a></li>
+                            <li><a href="#portfolio" class="hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_case_studies"></a></li>
+                            <li><a href="#testimonials" class="hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_clients"></a></li>
+                            <li><a href="#testimonials" class="hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_testimonials"></a></li>
                         </ul>
                     </div>
                     <div class="text-sm">
-                        <h4 class="font-bold mb-4 text-brand-gray-800 dark:text-white">Company</h4>
+                        <h4 class="font-bold mb-4 text-brand-gray-800 dark:text-white" data-lang-key="footer_company"></h4>
                         <ul class="space-y-3 text-gray-500 dark:text-gray-400">
-                            <li><a href="#hero" class="hover:text-brand-gray-800 dark:hover:text-white">About</a></li>
-                            <li><a href="#contact" class="hover:text-brand-gray-800 dark:hover:text-white">Careers</a></li>
-                            <li><a href="#contact" class="hover:text-brand-gray-800 dark:hover:text-white">Blog</a></li>
+                            <li><a href="#hero" class="hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_about"></a></li>
+                            <li><a href="#contact" class="hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_careers"></a></li>
+                            <li><a href="#contact" class="hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_blog"></a></li>
                         </ul>
                     </div>
                     <div class="text-sm">
-                        <h4 class="font-bold mb-4 text-brand-gray-800 dark:text-white">Contact</h4>
+                        <h4 class="font-bold mb-4 text-brand-gray-800 dark:text-white" data-lang-key="footer_contact"></h4>
                         <ul class="space-y-3 text-gray-500 dark:text-gray-400">
-                            <li><a href="#contact" class="hover:text-brand-gray-800 dark:hover:text-white">Email</a></li>
-                            <li><a href="#contact" class="hover:text-brand-gray-800 dark:hover:text-white">Locations</a></li>
-                            <li><a href="#faq" class="hover:text-brand-gray-800 dark:hover:text-white">FAQ</a></li>
+                            <li><a href="#contact" class="hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_email"></a></li>
+                            <li><a href="#contact" class="hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_locations"></a></li>
+                            <li><a href="#faq" class="hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_faq"></a></li>
                         </ul>
                     </div>
                 </div>
@@ -255,11 +256,12 @@
         </div>
     </footer>
 
+    <!-- Подключение вашего файла со скриптами -->
     <script src="script.js"></script>
     
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    var Tawk_API=Tawk_API||{};
     (function(){
     var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
     s1.async=true;
