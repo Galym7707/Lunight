@@ -78,7 +78,19 @@
         </section>
 
         <section id="services" class="py-20 lg:py-32 px-4">
-            <!-- Содержимое секции услуг -->
+            <div class="container mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="reveal bg-brand-gray-100 dark:bg-brand-orange p-8 rounded-2xl flex flex-col justify-between h-full hover:shadow-2xl hover:-translate-y-2 smooth-transition">
+                        <!-- ... -->
+                    </div>
+                    <div class="reveal bg-brand-gray-100 dark:bg-brand-orange p-8 rounded-2xl flex flex-col justify-between h-full hover:shadow-2xl hover:-translate-y-2 smooth-transition" style="transition-delay: 100ms;">
+                         <!-- ... -->
+                    </div>
+                    <div class="reveal bg-brand-gray-100 dark:bg-brand-orange p-8 rounded-2xl flex flex-col justify-between h-full hover:shadow-2xl hover:-translate-y-2 smooth-transition" style="transition-delay: 200ms;">
+                        <!-- ... -->
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="portfolio" class="py-20 lg:py-32 px-4">
@@ -87,43 +99,38 @@
                      <h2 class="text-3xl md:text-4xl font-bold text-brand-gray-800 dark:text-brand-orange glow-text" data-lang-key="portfolio_title"></h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                    
                     <div class="portfolio-card reveal group" data-gallery-images="portfolio/mpox1.png,portfolio/mpox2.png,portfolio/mpox3.png,portfolio/mpox4.png">
                         <img src="portfolio/mpox1.png" alt="MPOX Detector" class="portfolio-image">
                         <div class="portfolio-overlay">
                             <h3 class="text-2xl font-bold">MPOX Detector</h3>
                             <p class="mt-2 text-gray-200" data-lang-key="portfolio_desc_mpox"></p>
-                            <a href="http://mpox-detector.up.railway.app" target="_blank" class="portfolio-button" data-lang-key="portfolio_view"></a>
+                            <a href="http://mpox-detector.up.railway.app" target="_blank" rel="noopener noreferrer" class="portfolio-button" data-lang-key="portfolio_view"></a>
                         </div>
                     </div>
-
                     <div class="portfolio-card reveal group" style="transition-delay: 100ms;" data-gallery-images="portfolio/sami_art_studio1.png,portfolio/sami_art_studio2.png">
                         <img src="portfolio/sami_art_studio1.png" alt="Sami Art Studio" class="portfolio-image">
                         <div class="portfolio-overlay">
                             <h3 class="text-2xl font-bold">Sami Art Studio</h3>
                             <p class="mt-2 text-gray-200" data-lang-key="portfolio_desc_sami"></p>
-                            <a href="https://whitehercig.github.io/samiart" target="_blank" class="portfolio-button" data-lang-key="portfolio_view"></a>
+                             <a href="https://whitehercig.github.io/samiart" target="_blank" rel="noopener noreferrer" class="portfolio-button" data-lang-key="portfolio_view"></a>
                         </div>
                     </div>
-
                     <div class="portfolio-card reveal group" style="transition-delay: 200ms;" data-gallery-images="portfolio/kaz_legal_bot1.png,portfolio/kaz_legal_bot2.png,portfolio/kaz_legal_bot3.png,portfolio/kaz_legal_bot4.png">
                         <img src="portfolio/kaz_legal_bot1.png" alt="Kaz Legal Bot" class="portfolio-image">
                         <div class="portfolio-overlay">
                             <h3 class="text-2xl font-bold">Kaz Legal Bot</h3>
                             <p class="mt-2 text-gray-200" data-lang-key="portfolio_desc_legal"></p>
-                            <a href="https://ai-lawyer-tau.vercel.app" target="_blank" class="portfolio-button" data-lang-key="portfolio_view"></a>
+                             <a href="https://ai-lawyer-tau.vercel.app" target="_blank" rel="noopener noreferrer" class="portfolio-button" data-lang-key="portfolio_view"></a>
                         </div>
                     </div>
-
                     <div class="portfolio-card reveal group" style="transition-delay: 300ms;" data-gallery-images="portfolio/rooflux_kz1.png,portfolio/rooflux_kz2.png,portfolio/rooflux_kz3.png">
                         <img src="portfolio/rooflux_kz1.png" alt="Rooflux.kz" class="portfolio-image">
                         <div class="portfolio-overlay">
                             <h3 class="text-2xl font-bold">Rooflux.kz</h3>
                             <p class="mt-2 text-gray-200" data-lang-key="portfolio_desc_rooflux"></p>
-                            <a href="https://rooflux.kz" target="_blank" class="portfolio-button" data-lang-key="portfolio_view"></a>
+                             <a href="https://rooflux.kz" target="_blank" rel="noopener noreferrer" class="portfolio-button" data-lang-key="portfolio_view"></a>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -132,7 +139,6 @@
             <div class="container mx-auto reveal">
                 <div class="text-center mb-12 md:mb-16"><h2 class="text-3xl md:text-4xl font-bold text-brand-gray-800 dark:text-white" data-lang-key="testimonials_title"></h2><p class="text-lg md:text-xl text-gray-500 dark:text-brand-orange mt-2 font-semibold" data-lang-key="testimonials_subtitle"></p></div>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <!-- Отзыв 1 -->
                     <div class="testimonial-card bg-brand-gray-100 dark:bg-white p-8 rounded-2xl flex flex-col justify-between h-full">
                         <div>
                             <div class="flex items-center justify-between">
@@ -144,7 +150,6 @@
                         </div>
                         <p class="mt-6 font-semibold text-sm text-gray-500 dark:text-gray-600">Владелец, Rooflux.kz</p>
                     </div>
-                    <!-- Отзыв 2 -->
                     <div class="testimonial-card bg-brand-gray-100 dark:bg-white p-8 rounded-2xl flex flex-col justify-between h-full">
                         <div>
                            <div class="flex items-center justify-between">
@@ -156,7 +161,6 @@
                         </div>
                         <p class="mt-6 font-semibold text-sm text-gray-500 dark:text-gray-600">Художник, Sami Art Studio</p>
                     </div>
-                    <!-- Отзыв 3 -->
                     <div class="testimonial-card bg-brand-gray-100 dark:bg-white p-8 rounded-2xl flex flex-col justify-between h-full">
                          <div>
                            <div class="flex items-center justify-between">
@@ -171,14 +175,13 @@
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer class="py-16 bg-white dark:bg-brand-blue border-t border-brand-gray-200 dark:border-white/10">
-        <!-- Содержимое футера -->
+        <!-- Footer content... -->
     </footer>
 
-    <!-- ===== Модальное окно для галереи портфолио ===== -->
+    <!-- Модальное окно для галереи портфолио -->
     <div id="gallery-modal" class="fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4 hidden opacity-0 smooth-transition">
         <button id="gallery-close" class="absolute top-4 right-6 text-white text-5xl font-bold hover:text-gray-300">&times;</button>
         <button id="gallery-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/30 p-2 rounded-full hover:bg-black/50">
