@@ -62,7 +62,6 @@ body {
 }
 
 .portfolio-overlay {
-    /* ИСПРАВЛЕНО: Фон теперь темный в обоих режимах, текст всегда белый */
     @apply absolute inset-0 bg-gray-900/70 flex flex-col items-center justify-center text-white p-6 text-center opacity-0 group-hover:opacity-100;
     transform: translateY(20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
@@ -96,7 +95,6 @@ body {
     color: #6B7280;
 }
 
-/* ИСПРАВЛЕНО: Анимация для галереи */
 #gallery-image {
     transition: opacity 0.2s ease-in-out;
 }
