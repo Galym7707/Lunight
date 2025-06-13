@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-<!-- Язык по умолчанию будет устанавливаться скриптом -->
-<html lang="en" class="">
+<html lang="ru" class="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lunight - Experts at your side</title>
     
-    <!-- Подключение Tailwind CSS -->
+    <!-- Подключение Tailwind CSS (внешняя библиотека) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Подключение шрифта Inter -->
+    <!-- Подключение шрифта Inter с Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Подключение файла стилей -->
+    <!-- Подключение вашего файла стилей -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Конфигурация Tailwind CSS -->
+    <!-- ВАЖНО: Этот блок - конфигурация для Tailwind CSS. Его нельзя переносить. -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -26,7 +25,13 @@
                     colors: {
                         'brand-blue': '#2B328B',
                         'brand-orange': '#F7A027',
-                        'brand-gray': { 100: '#F3F4F6', 200: '#E5E7EB', 400: '#9CA3AF', 500: '#6B7280', 800: '#1F2937' },
+                        'brand-gray': { 
+                            100: '#F3F4F6',
+                            200: '#E5E7EB',
+                            400: '#9CA3AF',
+                            500: '#6B7280',
+                            800: '#1F2937'
+                        },
                         'dark-card': '#4A5568',
                         'dark-bg-card': 'rgba(255, 255, 255, 0.1)',
                     },
@@ -55,7 +60,6 @@
             <nav class="hidden md:flex items-center space-x-8" id="main-nav">
                 <a href="#services" class="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white smooth-transition" data-lang-key="nav_services"></a>
                 <a href="#portfolio" class="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white smooth-transition" data-lang-key="nav_portfolio"></a>
-                <!-- ИЗМЕНЕНО: Ссылка Contact теперь открывает чат -->
                 <a href="javascript:void(0);" class="open-tawk-chat text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white smooth-transition" data-lang-key="nav_contact"></a>
             </nav>
             
@@ -73,7 +77,6 @@
                 <svg id="theme-toggle-dark-icon" class="h-5 w-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
                 <svg id="theme-toggle-light-icon" class="h-5 w-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 14.95a1 1 0 010-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414 0zM3 11a1 1 0 100-2H2a1 1 0 100 2h1z"></path></svg>
             </button>
-             <!-- ИЗМЕНЕНО: Кнопка Contact us теперь открывает чат -->
             <a href="javascript:void(0);" class="open-tawk-chat bg-black dark:bg-white text-white dark:text-black px-5 py-2 rounded-full font-semibold text-sm hover:bg-gray-800 dark:hover:bg-gray-200 smooth-transition" data-lang-key="nav_contact_us"></a>
         </div>
     </header>
@@ -120,47 +123,42 @@
             </div>
         </section>
 
-        <!-- ИЗМЕНЕНО: Полностью новая секция Портфолио -->
         <section id="portfolio" class="py-20 lg:py-32 px-4">
             <div class="container mx-auto reveal">
                 <div class="text-center mb-12 md:mb-16">
                      <h2 class="text-3xl md:text-4xl font-bold text-brand-gray-800 dark:text-brand-orange glow-text" data-lang-key="portfolio_title"></h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                    <!-- Работа 1 -->
                     <div class="portfolio-card reveal group">
                         <img src="https://placehold.co/1280x960/cccccc/333333?text=Project+Alpha" alt="Project 1" class="portfolio-image">
                         <div class="portfolio-overlay">
                             <h3 class="text-2xl font-bold">Project Alpha</h3>
                             <p class="mt-2 text-gray-200" data-lang-key="portfolio_desc1"></p>
-                            <a href="#" class="portfolio-button" data-lang-key="portfolio_view"></a>
+                            <a href="#" target="_blank" class="portfolio-button" data-lang-key="portfolio_view"></a>
                         </div>
                     </div>
-                     <!-- Работа 2 -->
                     <div class="portfolio-card reveal group" style="transition-delay: 100ms;">
                         <img src="https://placehold.co/1280x960/bbbbbb/333333?text=Project+Beta" alt="Project 2" class="portfolio-image">
                         <div class="portfolio-overlay">
                             <h3 class="text-2xl font-bold">Project Beta</h3>
                             <p class="mt-2 text-gray-200" data-lang-key="portfolio_desc2"></p>
-                             <a href="#" class="portfolio-button" data-lang-key="portfolio_view"></a>
+                             <a href="#" target="_blank" class="portfolio-button" data-lang-key="portfolio_view"></a>
                         </div>
                     </div>
-                     <!-- Работа 3 -->
                     <div class="portfolio-card reveal group" style="transition-delay: 200ms;">
                         <img src="https://placehold.co/1280x960/aaaaaa/333333?text=Project+Gamma" alt="Project 3" class="portfolio-image">
                         <div class="portfolio-overlay">
                             <h3 class="text-2xl font-bold">Project Gamma</h3>
                             <p class="mt-2 text-gray-200" data-lang-key="portfolio_desc3"></p>
-                             <a href="#" class="portfolio-button" data-lang-key="portfolio_view"></a>
+                             <a href="#" target="_blank" class="portfolio-button" data-lang-key="portfolio_view"></a>
                         </div>
                     </div>
-                     <!-- Работа 4 -->
                     <div class="portfolio-card reveal group" style="transition-delay: 300ms;">
                         <img src="https://placehold.co/1280x960/999999/333333?text=Project+Delta" alt="Project 4" class="portfolio-image">
                         <div class="portfolio-overlay">
                             <h3 class="text-2xl font-bold">Project Delta</h3>
                             <p class="mt-2 text-gray-200" data-lang-key="portfolio_desc4"></p>
-                             <a href="#" class="portfolio-button" data-lang-key="portfolio_view"></a>
+                             <a href="#" target="_blank" class="portfolio-button" data-lang-key="portfolio_view"></a>
                         </div>
                     </div>
                 </div>
@@ -168,30 +166,103 @@
         </section>
         
         <section id="certificates" class="py-20 lg:py-32 px-4">
-             <!-- Содержимое секции -->
+            <div class="container mx-auto max-w-4xl reveal">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 md:mb-16 text-brand-gray-800 dark:text-white" data-lang-key="certificates_title"></h2>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between py-4 border-b border-brand-gray-200 dark:border-white/20"><span class="font-semibold text-base md:text-lg" data-lang-key="cert_1"></span><span class="text-brand-gray-400 dark:text-gray-300">2020</span></div>
+                    <div class="flex items-center justify-between py-4 border-b border-brand-gray-200 dark:border-white/20"><span class="font-semibold text-base md:text-lg" data-lang-key="cert_2"></span><span class="text-brand-gray-400 dark:text-gray-300">2021</span></div>
+                    <div class="flex items-center justify-between py-4 border-b border-brand-gray-200 dark:border-white/20"><span class="font-semibold text-base md:text-lg" data-lang-key="cert_3"></span><span class="text-brand-gray-400 dark:text-gray-300">2022</span></div>
+                    <div class="flex items-center justify-between py-4 border-b border-brand-gray-200 dark:border-white/20"><span class="font-semibold text-base md:text-lg" data-lang-key="cert_4"></span><span class="text-brand-gray-400 dark:text-gray-300">2024</span></div>
+                    <div class="flex items-center justify-between py-4 border-b border-brand-gray-200 dark:border-white/20"><span class="font-semibold text-base md:text-lg" data-lang-key="cert_5"></span><span class="text-brand-gray-400 dark:text-gray-300">2025</span></div>
+                </div>
+            </div>
         </section>
 
         <section id="faq" class="py-20 lg:py-32 px-4">
-             <!-- Содержимое секции -->
+            <div class="container mx-auto max-w-3xl reveal">
+                <div class="space-y-4" id="faq-accordion">
+                     <div class="accordion-item bg-brand-gray-100 dark:bg-dark-bg-card rounded-xl">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-5 font-semibold text-base md:text-lg smooth-transition hover:bg-gray-200/70 dark:hover:bg-white/20 rounded-xl">
+                            <span class="text-brand-gray-800 dark:text-white" data-lang-key="faq_q1"></span>
+                            <svg class="w-6 h-6 shrink-0 smooth-transition text-brand-gray-800 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                        </button>
+                        <div class="accordion-content max-h-0 overflow-hidden smooth-transition"><p class="p-5 pt-0 text-gray-600 dark:text-gray-300" data-lang-key="faq_a1"></p></div>
+                    </div>
+                    <div class="accordion-item bg-brand-gray-100 dark:bg-dark-bg-card rounded-xl">
+                        <button class="accordion-header w-full flex justify-between items-center text-left p-5 font-semibold text-base md:text-lg smooth-transition hover:bg-gray-200/70 dark:hover:bg-white/20 rounded-xl">
+                            <span class="text-brand-gray-800 dark:text-white" data-lang-key="faq_q2"></span>
+                            <svg class="w-6 h-6 shrink-0 smooth-transition text-brand-gray-800 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+                        </button>
+                        <div class="accordion-content max-h-0 overflow-hidden smooth-transition"><p class="p-5 pt-0 text-gray-600 dark:text-gray-300" data-lang-key="faq_a2"></p></div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="testimonials" class="py-20 lg:py-32 px-4">
-             <!-- Содержимое секции -->
+            <div class="container mx-auto reveal">
+                <div class="text-center"><h2 class="text-3xl md:text-4xl font-bold text-brand-gray-800 dark:text-white" data-lang-key="testimonials_title"></h2><p class="text-lg md:text-xl text-gray-500 dark:text-brand-orange mt-2 font-semibold" data-lang-key="testimonials_subtitle"></p></div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 md:mt-16">
+                    <div class="bg-brand-gray-100 dark:bg-white p-8 rounded-2xl flex flex-col justify-between h-full"><p class="text-gray-600 dark:text-brand-gray-800" data-lang-key="testimonial_1"></p><p class="mt-6 font-bold text-sm text-gray-500 dark:text-gray-600">CTO, Lorem</p></div>
+                    <div class="bg-brand-gray-100 dark:bg-white p-8 rounded-2xl flex flex-col justify-between h-full"><p class="text-gray-600 dark:text-brand-gray-800" data-lang-key="testimonial_2"></p><p class="mt-6 font-bold text-sm text-gray-500 dark:text-gray-600">Manager, Fusce</p></div>
+                    <div class="bg-brand-gray-100 dark:bg-white p-8 rounded-2xl flex flex-col justify-between h-full"><p class="text-gray-600 dark:text-brand-gray-800" data-lang-key="testimonial_3"></p><p class="mt-6 font-bold text-sm text-gray-500 dark:text-gray-600">CEO, Pellentesque</p></div>
+                </div>
+            </div>
         </section>
-
-        <section id="partners" class="py-20 lg:py-32 px-4">
-             <!-- Содержимое секции -->
-        </section>
-
-        <!-- ИЗМЕНЕНО: Секция с контактной формой полностью удалена -->
-
     </main>
 
     <footer class="py-16 bg-white dark:bg-brand-blue border-t border-brand-gray-200 dark:border-white/10">
-        <!-- Содержимое футера -->
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <div class="lg:col-span-1 flex flex-col items-center lg:items-start">
+                    <img src="./light-mode-logo.png" onerror="this.src='https://placehold.co/80x80/000000/FFFFFF?text=L&font=inter'" alt="Footer Logo" class="h-14 w-14 mb-4 block dark:hidden">
+                    <img src="./night-mode-logo.png" onerror="this.src='https://placehold.co/80x80/FFFFFF/2B328B?text=L&font=inter'" alt="Footer Logo Dark" class="h-14 w-14 mb-4 hidden dark:block">
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-brand-gray-800 dark:hover:text-white smooth-transition"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-brand-gray-800 dark:hover:text-white smooth-transition"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44 1.441-.645 1.441-1.44-.645-1.44-1.441-1.44z" clip-rule="evenodd"/></svg></a>
+                        <a href="https://t.me/AlexeiCherbankov" target="_blank" class="text-gray-400 hover:text-brand-gray-800 dark:hover:text-white smooth-transition"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zM8.752 17.82c-.528 0-.7-.232-.48-1.14l.848-3.968-3.544-1.728c-.84-.424-.816-.8.204-1.152l10.128-3.564c.72-.24 1.152.18 1.02.948l-1.872 8.856c-.168.744-.6.936-1.224.6l-2.928-2.172-1.416 1.356c-.156.156-.288.288-.6.288l.216-1.524z"/></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-brand-gray-800 dark:hover:text-white smooth-transition"><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 12c0 1.74.44 3.37 1.25 4.8a9.92 9.92 0 001.3 2.1L2.5 21.5l2.67-1.38a9.9 9.9 0 002.2.86A9.91 9.91 0 0012.04 22c5.46 0 9.91-4.45 9.91-9.9S17.5 2 12.04 2zm4.84 12.11a1.47 1.47 0 01-2.08 1.44l-.27-.16a6.83 6.83 0 01-3.7-3.15 1.25 1.25 0 01.38-1.55l.38-.38a.63.63 0 000-.9L10.22 8.2a.63.63 0 00-.9 0l-.67.76a2.7 2.7 0 00-.7 1.93c.1 1.41.93 2.78 2 3.85s2.44 1.87 3.85 2a2.7 2.7 0 001.93-.7l.76-.67a.63.63 0 000-.9l-1.18-1.18a.63.63 0 00-.9 0z"/></svg></a>
+                    </div>
+                </div>
+                <div class="lg:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="text-sm">
+                        <h4 class="font-bold mb-4 text-brand-gray-800 dark:text-white" data-lang-key="footer_services"></h4>
+                        <ul class="space-y-3 text-gray-500 dark:text-gray-400">
+                            <li><a href="#services" class="hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_development"></a></li>
+                            <li><a href="#services" class="hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_consulting"></a></li>
+                            <li><a href="#services" class="hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_support"></a></li>
+                        </ul>
+                    </div>
+                    <div class="text-sm">
+                        <h4 class="font-bold mb-4 text-brand-gray-800 dark:text-white" data-lang-key="footer_portfolio"></h4>
+                        <ul class="space-y-3 text-gray-500 dark:text-gray-400">
+                            <li><a href="#portfolio" class="hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_case_studies"></a></li>
+                            <li><a href="#testimonials" class="hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_clients"></a></li>
+                            <li><a href="#testimonials" class="hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_testimonials"></a></li>
+                        </ul>
+                    </div>
+                    <div class="text-sm">
+                        <h4 class="font-bold mb-4 text-brand-gray-800 dark:text-white" data-lang-key="footer_company"></h4>
+                        <ul class="space-y-3 text-gray-500 dark:text-gray-400">
+                            <li><a href="#hero" class="hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_about"></a></li>
+                            <li><a href="#contact" class="hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_careers"></a></li>
+                            <li><a href="#contact" class="hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_blog"></a></li>
+                        </ul>
+                    </div>
+                    <div class="text-sm">
+                        <h4 class="font-bold mb-4 text-brand-gray-800 dark:text-white" data-lang-key="footer_contact"></h4>
+                        <ul class="space-y-3 text-gray-500 dark:text-gray-400">
+                            <li><a href="javascript:void(0);" class="open-tawk-chat hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_email"></a></li>
+                            <li><a href="javascript:void(0);" class="open-tawk-chat hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_locations"></a></li>
+                            <li><a href="#faq" class="hover:text-brand-gray-800 dark:hover:text-white" data-lang-key="footer_faq"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
 
-    <!-- Подключение файла скриптов -->
+    <!-- Подключение вашего файла со скриптами -->
     <script src="script.js"></script>
     
     <!--Start of Tawk.to Script-->
