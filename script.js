@@ -1,191 +1,210 @@
-document.addEventListener('DOMContentLoaded', function() {
-
-    // --- Объект с переводами ---
-    const translations = {
-        en: {
-            nav_services: "Services", nav_portfolio: "Portfolio", nav_contact: "Contact", nav_contact_us: "Contact us",
-            hero_title: "Lunight", hero_subtitle: "Experts at your side.",
-            services_secure: "Secure", services_custom_code: "Custom code", services_fast: "Fast", services_quick_launch: "Quick launch", services_support: "Support", services_reliable_care: "Reliable care",
-            portfolio_title: "Our Portfolio", 
-            portfolio_desc_rooflux: "Landing page for a roofing materials supplier in Almaty. Implemented a price list and a feedback form.",
-            portfolio_desc_sami: "A vibrant and creative website for an art studio, showcasing works and class schedules.",
-            portfolio_desc_legal: "An AI-powered legal assistant to quickly answer legal questions in Kazakhstan.",
-            portfolio_desc_mpox: "A specialized system using AI to detect monkeypox from medical images.",
-            portfolio_view: "View Project",
-            testimonials_title: "What clients say", testimonials_subtitle: "Trusted by businesses worldwide.",
-            testimonial_1: `"I needed a website to sell roofs in Almaty, and fast. I turned to them for help, and they did everything with high quality in a couple of days. I loved the work and the design of the site. All the functionality works as I requested."`,
-            testimonial_2: `"The Lunight team perfectly captured the creative spirit of our studio. The site turned out bright, intuitive, and fully reflects our identity. The work was done on time, and communication was always top-notch."`,
-            testimonial_3: `"I urgently needed legal advice for my small business. The Kaz Legal Bot was a real lifesaver! It answered my questions clearly and quickly, saving me a lot of time and money on consultations. A fantastic tool!"`,
-            translation_note: "(translated from original)",
-            tooltip_lang: "Change language",
-        },
-        ru: {
-            nav_services: "Услуги", nav_portfolio: "Портфолио", nav_contact: "Контакты", nav_contact_us: "Связаться",
-            hero_title: "Lunight", hero_subtitle: "Эксперты на вашей стороне.",
-            services_secure: "Безопасно", services_custom_code: "Кастомный код", services_fast: "Быстро", services_quick_launch: "Быстрый запуск", services_support: "Поддержка", services_reliable_care: "Надежная забота",
-            portfolio_title: "Наше Портфолио", portfolio_desc_rooflux: "Лендинг для поставщика кровельных материалов в Алматы. Реализован прайс-лист и форма обратной связи.", portfolio_desc_sami: "Яркий и креативный сайт для арт-студии, демонстрирующий работы и расписание занятий.", portfolio_desc_legal: "Юридический помощник на базе ИИ для быстрых ответов на правовые вопросы в Казахстане.", portfolio_desc_mpox: "Специализированная система, использующая ИИ для детекции оспы обезьян по медицинским изображениям.", portfolio_view: "Посмотреть проект",
-            testimonials_title: "Что говорят клиенты", testimonials_subtitle: "Нам доверяют компании по всему миру.",
-            testimonial_1: `"Мне нужно было быстро сделать сайт для продажи крыш в Алматы, и я обратился к ним за помощью. Сделали все качественно за пару дней. Мне понравилась работа и дизайн сайта. Весь функционал работает как я просил."`,
-            testimonial_2: `"Команда Lunight идеально уловила творческий дух нашей студии. Сайт получился ярким, интуитивно понятным и полностью отражает нашу айдентику. Работа была выполнена в срок, а коммуникация всегда была на высоте."`,
-            testimonial_3: `"Срочно понадобилась юридическая консультация для моего малого бизнеса. Kaz Legal Bot стал настоящим спасением! Четко и быстро ответил на мои вопросы, сэкономив кучу времени и денег на консультациях. Фантастический инструмент!"`,
-            translation_note: "", // Пусто для русского
-            tooltip_lang: "Сменить язык",
-        },
-        kz: {
-            nav_services: "Қызметтер", nav_portfolio: "Портфолио", nav_contact: "Байланыс", nav_contact_us: "Байланысу",
-            hero_title: "Lunight", hero_subtitle: "Сарапшылар сіздің қасыңызда.",
-            services_secure: "Қауіпсіз", services_custom_code: "Жеке код", services_fast: "Жылдам", services_quick_launch: "Жылдам іске қосу", services_support: "Қолдау", services_reliable_care: "Сенімді қамқорлық",
-            portfolio_title: "Біздің Портфолио", portfolio_desc_rooflux: "Алматыдағы шатыр материалдарын жеткізушіге арналған лендинг. Бағалар тізімі мен кері байланыс формасы іске асырылды.", portfolio_desc_sami: "Жұмыстарды және сабақ кестесін көрсететін арт-студияға арналған жарқын және креативті сайт.", portfolio_desc_legal: "Қазақстандағы құқықтық сұрақтарға жылдам жауап беретін ЖИ негізіндегі заңгерлік көмекші.", portfolio_desc_mpox: "Медициналық суреттер бойынша маймыл шешегін анықтау үшін ЖИ қолданатын мамандандырылған жүйе.", portfolio_view: "Жобаны көру",
-            testimonials_title: "Клиенттер не дейді", testimonials_subtitle: "Бізге бүкіл әлем бойынша компаниялар сенеді.",
-            testimonial_1: `"Маған Алматыда шатыр сату үшін тез арада сайт керек болды, мен оларға көмек сұрап хабарластым. Барлығын бір-екі күнде сапалы жасап берді. Маған сайттың жұмысы мен дизайны ұнады. Барлық функционал мен сұрағандай жұмыс істейді."`,
-            testimonial_2: `"Lunight командасы біздің студияның шығармашылық рухын тамаша түсінді. Сайт жарқын, интуитивті түсінікті болып шықты және біздің бірегейлігімізді толық көрсетеді. Жұмыс уақытында орындалды, ал байланыс әрқашан жоғары деңгейде болды."`,
-            testimonial_3: `"Шағын бизнесім үшін шұғыл заңгерлік кеңес қажет болды. Kaz Legal Bot нағыз құтқарушы болды! Менің сұрақтарыма нақты және жылдам жауап беріп, консультацияларға кететін көп уақытым мен ақшамды үнемдеді. Керемет құрал!"`,
-            translation_note: "(түпнұсқадан аударылған)",
-            tooltip_lang: "Тілді өзгерту",
-        }
-    };
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunight - Experts at your side</title>
     
-    // --- Код для отображения 5 звезд ---
-    document.querySelectorAll('.star-rating').forEach(rating => {
-        for(let i = 0; i < 5; i++) {
-            const star = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-            star.setAttribute("viewBox", "0 0 20 20");
-            star.setAttribute("fill", "currentColor");
-            star.classList.add('w-5', 'h-5');
-            const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-            path.setAttribute("d", "M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z");
-            star.appendChild(path);
-            rating.appendChild(star);
-        }
-    });
-
-    const languages = ['en', 'ru', 'kz'];
-    let currentLangIndex = 0;
-
-    const langSwitcher = document.getElementById('lang-switcher');
-    const langSwitcherText = document.getElementById('lang-switcher-text');
-
-    const setTawkLanguage = (lang) => {
-        if (window.Tawk_API && typeof window.Tawk_API.setAttributes === 'function') {
-            window.Tawk_API.setAttributes({ 'language': lang }, function(error){
-                if (error) console.error('Tawk.to setAttributes error:', error);
-            });
-        }
-    };
-
-    window.Tawk_API = window.Tawk_API || {};
-    window.Tawk_API.onLoad = function(){
-        const currentLang = localStorage.getItem('language') || 'en';
-        setTawkLanguage(currentLang);
-    };
-
-    const setLanguage = (lang) => {
-        if (!translations[lang]) return;
-
-        document.querySelectorAll('[data-lang-key]').forEach(el => {
-            const key = el.getAttribute('data-lang-key');
-            if (translations[lang] && translations[lang][key] !== undefined) {
-                 el.style.opacity = '0';
-                setTimeout(() => {
-                    el.innerHTML = translations[lang][key];
-                    el.style.opacity = '1';
-                }, 150);
-            }
-        });
-        
-        // Показываем/скрываем подсказку о переводе
-        document.querySelectorAll('.translation-note').forEach(note => {
-            note.style.display = lang === 'ru' ? 'none' : 'block';
-        });
-
-        document.documentElement.lang = lang;
-        localStorage.setItem('language', lang);
-        
-        if(langSwitcherText) langSwitcherText.textContent = lang.toUpperCase();
-        
-        currentLangIndex = languages.indexOf(lang);
-        setTawkLanguage(lang);
-    };
-
-    if (langSwitcher) {
-        langSwitcher.addEventListener('click', () => {
-            currentLangIndex = (currentLangIndex + 1) % languages.length;
-            const newLang = languages[currentLangIndex];
-            setLanguage(newLang);
-        });
-    }
-
-    const initialLang = localStorage.getItem('language') || 'en';
-    setLanguage(initialLang);
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    // ... остальной код (аккордеон, тема, анимации)
-    
-    document.querySelectorAll('.open-tawk-chat').forEach(button => {
-        button.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (window.Tawk_API && typeof window.Tawk_API.toggle === 'function') {
-                window.Tawk_API.toggle();
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#2B328B',
+                        'brand-orange': '#F7A027',
+                        'brand-gray': { 100: '#F3F4F6', 200: '#E5E7EB', 400: '#9CA3AF', 500: '#6B7280', 800: '#1F2937' },
+                        'dark-card': '#4A5568',
+                        'dark-bg-card': 'rgba(255, 255, 255, 0.1)',
+                    },
+                    keyframes: {
+                        'pulse-glow': {
+                           '0%, 100%': { boxShadow: '0 0 15px rgba(247, 160, 39, 0.4)' },
+                           '50%': { boxShadow: '0 0 30px rgba(247, 160, 39, 0.8)' },
+                        }
+                    },
+                    animation: {
+                       'pulse-glow': 'pulse-glow 3s infinite ease-in-out',
+                    }
+                }
             }
-        });
-    });
-
-    // --- Логика для галереи портфолио ---
-    const galleryModal = document.getElementById('gallery-modal');
-    const galleryImage = document.getElementById('gallery-image');
-    const galleryClose = document.getElementById('gallery-close');
-    const galleryPrev = document.getElementById('gallery-prev');
-    const galleryNext = document.getElementById('gallery-next');
-    const portfolioCards = document.querySelectorAll('.portfolio-card');
-
-    let currentImages = [];
-    let currentIndex = 0;
-
-    const showImage = (index) => {
-        if (index >= 0 && index < currentImages.length) {
-            galleryImage.src = currentImages[index];
-            currentIndex = index;
         }
-    };
+    </script>
+</head>
+<body class="bg-white text-brand-gray-800 dark:bg-brand-blue dark:text-white">
 
-    portfolioCards.forEach(card => {
-        card.addEventListener('click', (e) => {
-            if (e.target.closest('.portfolio-button')) {
-                return;
-            }
+    <header class="py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center sticky top-0 left-0 right-0 z-50 border-b border-gray-200/20 dark:border-white/10 bg-white/80 dark:bg-brand-blue/80 backdrop-blur-sm">
+        <a href="#hero" class="text-2xl font-bold text-brand-gray-800 dark:text-white">
+            Lunight®
+        </a>
+        <div class="flex items-center space-x-2 sm:space-x-4">
+            <nav class="hidden md:flex items-center space-x-8" id="main-nav">
+                <a href="#services" class="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white smooth-transition" data-lang-key="nav_services"></a>
+                <a href="#portfolio" class="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white smooth-transition" data-lang-key="nav_portfolio"></a>
+                <a href="javascript:void(0);" class="open-tawk-chat text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white smooth-transition" data-lang-key="nav_contact"></a>
+            </nav>
             
-            const imagesAttr = card.getAttribute('data-gallery-images');
-            if (imagesAttr) {
-                currentImages = imagesAttr.split(',');
-                showImage(0);
-                galleryModal.classList.remove('hidden');
-                setTimeout(() => galleryModal.classList.remove('opacity-0'), 10);
-            }
-        });
-    });
+            <div class="relative group">
+                <button id="lang-switcher" class="flex items-center gap-2 p-2 font-semibold text-gray-600 dark:text-gray-300 rounded-md hover:bg-gray-200 dark:hover:bg-white/20 smooth-transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9m-9 9a9 9 0 00-9-9" />
+                    </svg>
+                    <span id="lang-switcher-text"></span>
+                </button>
+                <div class="tooltip" data-lang-key="tooltip_lang"></div>
+            </div>
 
-    const closeModal = () => {
-        galleryModal.classList.add('opacity-0');
-        setTimeout(() => galleryModal.classList.add('hidden'), 300);
-    };
+            <button id="theme-toggle" class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-white/20 smooth-transition">
+                <svg id="theme-toggle-dark-icon" class="h-5 w-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                <svg id="theme-toggle-light-icon" class="h-5 w-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 14.95a1 1 0 010-1.414l.707-.707a1 1 0 011.414 1.414l-.707.707a1 1 0 01-1.414 0zM3 11a1 1 0 100-2H2a1 1 0 100 2h1z"></path></svg>
+            </button>
+            <a href="javascript:void(0);" class="open-tawk-chat bg-black dark:bg-white text-white dark:text-black px-5 py-2 rounded-full font-semibold text-sm hover:bg-gray-800 dark:hover:bg-gray-200 smooth-transition" data-lang-key="nav_contact_us"></a>
+        </div>
+    </header>
 
-    if(galleryClose) galleryClose.addEventListener('click', closeModal);
-    if(galleryModal) galleryModal.addEventListener('click', (e) => {
-        if (e.target === galleryModal) closeModal();
-    });
-    if(galleryNext) galleryNext.addEventListener('click', () => showImage((currentIndex + 1) % currentImages.length));
-    if(galleryPrev) galleryPrev.addEventListener('click', () => showImage((currentIndex - 1 + currentImages.length) % currentImages.length));
+    <main>
+        <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-4">
+            <div class="reveal">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-brand-gray-800 dark:text-white" data-lang-key="hero_title"></h1>
+                <p class="text-lg sm:text-xl md:text-2xl text-gray-500 dark:text-brand-orange mt-3 font-semibold" data-lang-key="hero_subtitle"></p>
+            </div>
+        </section>
 
-    // Навигация по стрелкам клавиатуры в галерее
-     document.addEventListener('keydown', (e) => {
-        if (!galleryModal.classList.contains('hidden')) {
-            if (e.key === 'ArrowRight') {
-                galleryNext.click();
-            } else if (e.key === 'ArrowLeft') {
-                galleryPrev.click();
-            } else if (e.key === 'Escape') {
-                closeModal();
-            }
-        }
-    });
+        <section id="services" class="py-20 lg:py-32 px-4">
+            <div class="container mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div class="reveal bg-brand-gray-100 dark:bg-brand-orange p-8 rounded-2xl flex flex-col justify-between h-full hover:shadow-2xl hover:-translate-y-2 smooth-transition">
+                        <!-- ... -->
+                    </div>
+                    <div class="reveal bg-brand-gray-100 dark:bg-brand-orange p-8 rounded-2xl flex flex-col justify-between h-full hover:shadow-2xl hover:-translate-y-2 smooth-transition" style="transition-delay: 100ms;">
+                         <!-- ... -->
+                    </div>
+                    <div class="reveal bg-brand-gray-100 dark:bg-brand-orange p-8 rounded-2xl flex flex-col justify-between h-full hover:shadow-2xl hover:-translate-y-2 smooth-transition" style="transition-delay: 200ms;">
+                        <!-- ... -->
+                    </div>
+                </div>
+            </div>
+        </section>
 
-});
+        <section id="portfolio" class="py-20 lg:py-32 px-4">
+            <div class="container mx-auto reveal">
+                <div class="text-center mb-12 md:mb-16">
+                     <h2 class="text-3xl md:text-4xl font-bold text-brand-gray-800 dark:text-brand-orange glow-text" data-lang-key="portfolio_title"></h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                    <div class="portfolio-card reveal group" data-gallery-images="portfolio/mpox1.png,portfolio/mpox2.png,portfolio/mpox3.png,portfolio/mpox4.png">
+                        <img src="portfolio/mpox1.png" alt="MPOX Detector" class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-2xl font-bold">MPOX Detector</h3>
+                            <p class="mt-2 text-gray-200" data-lang-key="portfolio_desc_mpox"></p>
+                            <a href="http://mpox-detector.up.railway.app" target="_blank" rel="noopener noreferrer" class="portfolio-button" data-lang-key="portfolio_view"></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-card reveal group" style="transition-delay: 100ms;" data-gallery-images="portfolio/sami_art_studio1.png,portfolio/sami_art_studio2.png">
+                        <img src="portfolio/sami_art_studio1.png" alt="Sami Art Studio" class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-2xl font-bold">Sami Art Studio</h3>
+                            <p class="mt-2 text-gray-200" data-lang-key="portfolio_desc_sami"></p>
+                             <a href="https://whitehercig.github.io/samiart" target="_blank" rel="noopener noreferrer" class="portfolio-button" data-lang-key="portfolio_view"></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-card reveal group" style="transition-delay: 200ms;" data-gallery-images="portfolio/kaz_legal_bot1.png,portfolio/kaz_legal_bot2.png,portfolio/kaz_legal_bot3.png,portfolio/kaz_legal_bot4.png">
+                        <img src="portfolio/kaz_legal_bot1.png" alt="Kaz Legal Bot" class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-2xl font-bold">Kaz Legal Bot</h3>
+                            <p class="mt-2 text-gray-200" data-lang-key="portfolio_desc_legal"></p>
+                             <a href="https://ai-lawyer-tau.vercel.app" target="_blank" rel="noopener noreferrer" class="portfolio-button" data-lang-key="portfolio_view"></a>
+                        </div>
+                    </div>
+                    <div class="portfolio-card reveal group" style="transition-delay: 300ms;" data-gallery-images="portfolio/rooflux_kz1.png,portfolio/rooflux_kz2.png,portfolio/rooflux_kz3.png">
+                        <img src="portfolio/rooflux_kz1.png" alt="Rooflux.kz" class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <h3 class="text-2xl font-bold">Rooflux.kz</h3>
+                            <p class="mt-2 text-gray-200" data-lang-key="portfolio_desc_rooflux"></p>
+                             <a href="https://rooflux.kz" target="_blank" rel="noopener noreferrer" class="portfolio-button" data-lang-key="portfolio_view"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="testimonials" class="py-20 lg:py-32 px-4">
+            <div class="container mx-auto reveal">
+                <div class="text-center mb-12 md:mb-16"><h2 class="text-3xl md:text-4xl font-bold text-brand-gray-800 dark:text-white" data-lang-key="testimonials_title"></h2><p class="text-lg md:text-xl text-gray-500 dark:text-brand-orange mt-2 font-semibold" data-lang-key="testimonials_subtitle"></p></div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="testimonial-card bg-brand-gray-100 dark:bg-white p-8 rounded-2xl flex flex-col justify-between h-full">
+                        <div>
+                            <div class="flex items-center justify-between">
+                                <span class="font-bold text-lg text-brand-gray-800 dark:text-brand-gray-800">Нурлан И.</span>
+                                <div class="star-rating"></div>
+                            </div>
+                            <p class="mt-4 text-gray-600 dark:text-brand-gray-800" data-lang-key="testimonial_1"></p>
+                            <p class="translation-note" data-lang-key="translation_note"></p>
+                        </div>
+                        <p class="mt-6 font-semibold text-sm text-gray-500 dark:text-gray-600">Владелец, Rooflux.kz</p>
+                    </div>
+                    <div class="testimonial-card bg-brand-gray-100 dark:bg-white p-8 rounded-2xl flex flex-col justify-between h-full">
+                        <div>
+                           <div class="flex items-center justify-between">
+                                <span class="font-bold text-lg text-brand-gray-800 dark:text-brand-gray-800">Айсулу М.</span>
+                                <div class="star-rating"></div>
+                            </div>
+                            <p class="mt-4 text-gray-600 dark:text-brand-gray-800" data-lang-key="testimonial_2"></p>
+                            <p class="translation-note" data-lang-key="translation_note"></p>
+                        </div>
+                        <p class="mt-6 font-semibold text-sm text-gray-500 dark:text-gray-600">Художник, Sami Art Studio</p>
+                    </div>
+                    <div class="testimonial-card bg-brand-gray-100 dark:bg-white p-8 rounded-2xl flex flex-col justify-between h-full">
+                         <div>
+                           <div class="flex items-center justify-between">
+                                <span class="font-bold text-lg text-brand-gray-800 dark:text-brand-gray-800">Марат О.</span>
+                                <div class="star-rating"></div>
+                            </div>
+                            <p class="mt-4 text-gray-600 dark:text-brand-gray-800" data-lang-key="testimonial_3"></p>
+                            <p class="translation-note" data-lang-key="translation_note"></p>
+                        </div>
+                        <p class="mt-6 font-semibold text-sm text-gray-500 dark:text-gray-600">Предприниматель</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-16 bg-white dark:bg-brand-blue border-t border-brand-gray-200 dark:border-white/10">
+        <!-- Footer content... -->
+    </footer>
+
+    <!-- Модальное окно для галереи портфолио -->
+    <div id="gallery-modal" class="fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4 hidden opacity-0 smooth-transition">
+        <button id="gallery-close" class="absolute top-4 right-6 text-white text-5xl font-bold hover:text-gray-300">&times;</button>
+        <button id="gallery-prev" class="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/30 p-2 rounded-full hover:bg-black/50">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+        </button>
+        <button id="gallery-next" class="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/30 p-2 rounded-full hover:bg-black/50">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        </button>
+        <img id="gallery-image" src="" alt="Portfolio image" class="max-h-[90vh] max-w-[90vw] object-contain rounded-lg">
+    </div>
+
+    <script src="script.js"></script>
+    
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{};
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/684aee346afa6c19102b3486/1itib4vrf';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+</body>
+</html>
