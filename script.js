@@ -1,5 +1,35 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    const themeToggle = document.getElementById('theme-toggle');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    
+    function setThemeMode(mode) {
+        if (mode === 'dark') {
+            document.documentElement.classList.add('dark');
+            darkIcon.classList.add('hidden');
+            lightIcon.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            lightIcon.classList.add('hidden');
+            darkIcon.classList.remove('hidden');
+        }
+        localStorage.setItem('theme', mode);
+    }
+    
+    function initTheme() {
+        const storedTheme = localStorage.getItem('theme') || 'light';
+        setThemeMode(storedTheme);
+    }
+    initTheme();
+    
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.documentElement.classList.contains('dark');
+            setThemeMode(isDark ? 'light' : 'dark');
+        });
+    }
+    
     const translations = {
         en: {
             nav_services: "Services", nav_portfolio: "Portfolio", nav_contact: "Contact", nav_contact_us: "Contact us",
