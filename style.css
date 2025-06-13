@@ -30,7 +30,6 @@ body {
     transition: opacity 0.2s ease-in-out;
 }
 
-/* Стили для всплывающей подсказки */
 .tooltip {
     position: absolute;
     bottom: 100%;
@@ -52,4 +51,26 @@ body {
 .group:hover .tooltip {
     opacity: 1;
     visibility: visible;
+}
+
+.portfolio-card {
+    @apply relative rounded-2xl overflow-hidden shadow-lg;
+}
+
+.portfolio-image {
+    @apply w-full h-full object-cover smooth-transition group-hover:scale-110;
+}
+
+.portfolio-overlay {
+    @apply absolute inset-0 bg-black/70 flex flex-col items-center justify-center text-white p-6 text-center opacity-0 group-hover:opacity-100 smooth-transition;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.group:hover .portfolio-overlay {
+    transform: translateY(0);
+}
+
+.portfolio-button {
+    @apply mt-4 px-5 py-2 bg-brand-orange text-white rounded-full font-semibold hover:opacity-90 smooth-transition;
 }
