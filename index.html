@@ -70,7 +70,7 @@
     </header>
 
     <main>
-        <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-4">
+        <section id="hero" class="min-h-[60vh] flex flex-col justify-center items-center text-center px-4">
             <div class="reveal">
                 <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-brand-gray-800 dark:text-white" data-lang-key="hero_title"></h1>
                 <p class="text-lg sm:text-xl md:text-2xl text-gray-500 dark:text-brand-orange mt-3 font-semibold" data-lang-key="hero_subtitle"></p>
@@ -166,18 +166,14 @@
     </main>
 
     <footer class="py-16 bg-white dark:bg-brand-blue border-t border-brand-gray-200 dark:border-white/10">
-        <div class="text-center">
-            <p class="text-sm text-gray-500 dark:text-gray-300">© 2025 Lunight. All rights reserved.</p>
-            <div class="mt-4 flex justify-center space-x-6">
-                <a href="https://t.me/AlexeiCherbankov" target="_blank" class="text-gray-400 hover:text-brand-orange transition">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0C5.37 0 0 5.373 0 12c0 5.302 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.082-.729.082-.729 1.205.084 1.839 1.238 1.839 1.238 1.07 1.834 2.809 1.304 3.495.997.107-.776.418-1.305.762-1.604-2.665-.304-5.467-1.334-5.467-5.931 0-1.31.467-2.381 1.235-3.221-.124-.303-.536-1.524.117-3.176 0 0 1.008-.322 3.301 1.23a11.5 11.5 0 013.003-.404c1.02.005 2.046.138 3.003.404 2.291-1.552 3.297-1.23 3.297-1.23.655 1.653.244 2.874.12 3.176.77.84 1.232 1.911 1.232 3.221 0 4.609-2.807 5.625-5.48 5.921.43.371.823 1.102.823 2.222v3.293c0 .321.218.694.825.576C20.565 21.796 24 17.298 24 12c0-6.627-5.373-12-12-12z"/>
-                    </svg>
+        <div class="mt-8 text-center">
+            <p class="text-gray-500 dark:text-gray-300 text-sm">© 2025 Lunight. All rights reserved.</p>
+            <div class="flex justify-center gap-6 mt-4">
+                <a href="https://t.me/AlexeiCherbankov" target="_blank" aria-label="Telegram" class="text-gray-400 hover:text-brand-orange dark:hover:text-white transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9.993 15.37l-.395 4.678c.565 0 .814-.241 1.114-.529l2.669-2.526 5.522 4.023c1.01.555 1.733.263 1.993-.936l3.618-17.017c.34-1.599-.574-2.226-1.565-1.844l-21.4 8.24c-1.457.567-1.443 1.383-.25 1.754l5.472 1.707L18.9 5.515c.663-.407 1.27-.183.773.224l-10.88 9.63z"/></svg>
                 </a>
-                <a href="javascript:void(0);" class="text-gray-400 hover:text-brand-orange transition cursor-not-allowed">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .3 2.4.5.6.2 1.1.5 1.6 1 .5.5.8 1 .9 1.6.2.5.4 1.2.5 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 2-.5 2.4-.2.6-.5 1.1-1 1.6-.5.5-1 .8-1.6.9-.5.2-1.2.4-2.4.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.3-2.4-.5-.6-.2-1.1-.5-1.6-1-.5-.5-.8-1-.9-1.6-.2-.5-.4-1.2-.5-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-2 .5-2.4.2-.6.5-1.1 1-1.6.5-.5 1-.8 1.6-.9.5-.2 1.2-.4 2.4-.5C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.8.4-1.2.8-.4.4-.6.7-.8 1.2-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.8.8 1.2.4.4.7.6 1.2.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.8-.4 1.2-.8.4-.4.6-.7.8-1.2.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.8-.8-1.2-.4-.4-.7-.6-1.2-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.6a6.2 6.2 0 110 12.4 6.2 6.2 0 010-12.4zm0 1.8a4.4 4.4 0 100 8.8 4.4 4.4 0 000-8.8zm6.4-1.2a1.4 1.4 0 110 2.8 1.4 1.4 0 010-2.8z"/>
-                    </svg>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram (coming soon)" class="text-gray-400 hover:text-brand-orange dark:hover:text-white transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919C2.174 15.647 2.163 15.267 2.163 12s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.174 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.053.014 8.333 0 8.741 0 12s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324A6.162 6.162 0 0012 5.838zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>
                 </a>
             </div>
         </div>
