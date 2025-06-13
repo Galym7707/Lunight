@@ -120,10 +120,14 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = 0;
 
     const showImage = (index) => {
-        if (index >= 0 && index < currentImages.length) {
-            galleryImage.src = currentImages[index];
-            currentIndex = index;
-        }
+        galleryImage.style.opacity = '0';
+        setTimeout(() => {
+            if (index >= 0 && index < currentImages.length) {
+                galleryImage.src = currentImages[index];
+                currentIndex = index;
+            }
+            galleryImage.style.opacity = '1';
+        }, 200); // Соответствует transition в CSS
     };
 
     portfolioCards.forEach(card => {
