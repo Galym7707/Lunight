@@ -51,13 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
             service_apps: "Mobile Applications",
             service_apps_desc: "We build cross-platform apps from scratch.",
             trusted_title: "Trusted by",
-            nav_services: "Услуги",
-            nav_portfolio: "Портфолио",
-            nav_contact: "Контакты",
-            nav_contact_us: "Связаться",
-            hero_title: "Эксперты на вашей стороне",
-            hero_subtitle: "Продвигаем ваш бизнес с помощью технологий",
-            trust_us: "Нам доверяют",
         },
         ru: {
             nav_services: "Услуги", nav_portfolio: "Портфолио", nav_contact: "Контакты", nav_contact_us: "Связаться",
