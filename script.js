@@ -51,6 +51,13 @@ document.addEventListener('DOMContentLoaded', function() {
             service_apps: "Mobile Applications",
             service_apps_desc: "We build cross-platform apps from scratch.",
             trusted_title: "Trusted by",
+            nav_services: "Услуги",
+            nav_portfolio: "Портфолио",
+            nav_contact: "Контакты",
+            nav_contact_us: "Связаться",
+            hero_title: "Эксперты на вашей стороне",
+            hero_subtitle: "Продвигаем ваш бизнес с помощью технологий",
+            trust_us: "Нам доверяют",
         },
         ru: {
             nav_services: "Услуги", nav_portfolio: "Портфолио", nav_contact: "Контакты", nav_contact_us: "Связаться",
@@ -72,6 +79,13 @@ document.addEventListener('DOMContentLoaded', function() {
             service_apps: "Мобильные приложения",
             service_apps_desc: "Создаем удобные кроссплатформенные приложения с нуля.",
             trusted_title: "Нам доверяют",
+            nav_services: "Services",
+            nav_portfolio: "Portfolio",
+            nav_contact: "Contact",
+            nav_contact_us: "Contact Us",
+            hero_title: "Experts at your side",
+            hero_subtitle: "We empower your business with tech",
+            trust_us: "Trusted by",
         },
         kz: {
             nav_services: "Қызметтер", nav_portfolio: "Портфолио", nav_contact: "Байланыс", nav_contact_us: "Байланысу",
@@ -93,6 +107,13 @@ document.addEventListener('DOMContentLoaded', function() {
             service_apps: "Мобильді Қосымшалар",
             service_apps_desc: "Бірнеше платформаға арналған қосымшаларды нөлден жасаймыз.",
             trusted_title: "Бізге сенеді",
+            nav_services: "Қызметтер",
+            nav_portfolio: "Портфолио",
+            nav_contact: "Байланыс",
+            nav_contact_us: "Байланысыңыз",
+            hero_title: "Сіздің серіктесіңіз — сарапшылар",
+            hero_subtitle: "Бизнестің дамуына технологиямен қолдау көрсетеміз",
+            trust_us: "Сенім білдіргендер",
         }
     };
     
