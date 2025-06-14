@@ -72,7 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
             testimonial_name_2: "Aisulu M.",
             testimonial_role_2: "Artist, Sami Art Studio",
             testimonial_name_3: "Marat O.",
-            testimonial_role_3: "Entrepreneur, Kaz Legal Bot"
+            testimonial_role_3: "Entrepreneur, Kaz Legal Bot",
+            2025: "© 2025 Lunight. All rights reserved."
         },
         ru: {
             nav_services: "Услуги",
@@ -106,7 +107,8 @@ document.addEventListener('DOMContentLoaded', function() {
             testimonial_name_2: "Айсулу М.",
             testimonial_role_2: "Художник, Sami Art Studio",
             testimonial_name_3: "Марат О.",
-            testimonial_role_3: "Предприниматель, Kaz Legal Bot"
+            testimonial_role_3: "Предприниматель, Kaz Legal Bot",
+            2025: "© 2025 Lunight. Все права защищены."
         },
         kz: {
             nav_services: "Қызметтер",
@@ -140,7 +142,8 @@ document.addEventListener('DOMContentLoaded', function() {
             testimonial_name_2: "Айсұлу М.",
             testimonial_role_2: "Суретші, Sami Art Studio",
             testimonial_name_3: "Марат О.",
-            testimonial_role_3: "Кәсіпкер, Kaz Legal Bot"
+            testimonial_role_3: "Кәсіпкер, Kaz Legal Bot",
+            2025: "© 2025 Lunight. Барлық құқықтар қорғалған."
         }
     };
 
