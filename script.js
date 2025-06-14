@@ -59,6 +59,12 @@ document.addEventListener('DOMContentLoaded', function() {
             service_apps: "Mobile Applications",
             service_apps_desc: "We build cross-platform apps from scratch.",
             trusted_title: "Trusted by",
+            testimonial_name_1: "Nurlan I.",
+            testimonial_role_1: "Owner, Rooflux.kz",
+            testimonial_name_2: "Aisulu M."
+            testimonial_role_2: "Artist, Sami Art Studio",
+            testimonial_name_3: "Marat O.",
+            testimonial_role_3: "Entrepreneur, Kaz Legal Bot",
         },
         ru: {
             nav_services: "Услуги", nav_portfolio: "Портфолио", nav_contact: "Контакты", nav_contact_us: "Связаться",
@@ -87,6 +93,14 @@ document.addEventListener('DOMContentLoaded', function() {
             hero_title: "Experts at your side",
             hero_subtitle: "We empower your business with tech",
             trust_us: "Trusted by",
+            testimonial_name_1: "Нурлан И.",
+            testimonial_role_1: "Владелец, Rooflux.kz",
+            
+            testimonial_name_2: "Айсулу М.",
+            testimonial_role_2: "Художник, Sami Art Studio",
+            
+            testimonial_name_3: "Марат Е.",
+            testimonial_role_3: "Предприниматель, Kaz Legal Bot",
         },
         kz: {
             nav_services: "Қызметтер", nav_portfolio: "Портфолио", nav_contact: "Байланыс", nav_contact_us: "Байланысу",
@@ -115,6 +129,15 @@ document.addEventListener('DOMContentLoaded', function() {
             hero_title: "Сіздің серіктесіңіз — сарапшылар",
             hero_subtitle: "Бизнестің дамуына технологиямен қолдау көрсетеміз",
             trust_us: "Сенім білдіргендер",
+            
+            testimonial_name_1: "Нұрлан И.",
+            testimonial_role_1: "Иесі, Rooflux.kz",
+            
+            testimonial_name_2: "Айсұлу М.",
+            testimonial_role_2: "Суретші, Sami Art Studio",
+            
+            testimonial_name_3: "Марат О.",
+            testimonial_role_3: "Кәсіпкер, Kaz Legal Bot",
         }
     };
     
