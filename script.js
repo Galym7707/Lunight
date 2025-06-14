@@ -3,6 +3,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('theme-toggle');
     const darkIcon = document.getElementById('theme-toggle-dark-icon');
     const lightIcon = document.getElementById('theme-toggle-light-icon');
+
+    function updateFavicon(mode) {
+        const favicon = document.getElementById('favicon');
+        if (favicon) {
+            favicon.href = mode === 'dark' ? 'night-mode-logo.png' : 'light-mode-logo.png';
+        }
+    }
     
     function setThemeMode(mode) {
         if (mode === 'dark') {
@@ -15,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             darkIcon.classList.remove('hidden');
         }
         localStorage.setItem('theme', mode);
+        updateFavicon(mode);
     }
     
     function initTheme() {
