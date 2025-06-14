@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             testimonials_title: "What clients say", testimonials_subtitle: "Trusted by businesses worldwide.",
             testimonial_1: `"I needed a website to sell roofs in Almaty, and fast. I turned to them for help, and they did everything with high quality in a couple of days. I loved the work and the design of the site. All the functionality works as I requested."`,
             testimonial_2: `"The Lunight team perfectly captured the creative spirit of our studio. The site turned out bright, intuitive, and fully reflects our identity. The work was done on time, and communication was always top-notch."`,
-            testimonial_3: `"I urgently needed legal advice for my small business. Kaz Legal Bot was a real lifesaver! It answered my questions clearly and quickly, saving me a lot of time and money on consultations. A fantastic tool!"`,
+            testimonial_3: `"Я использовал Kaz Legal Bot для получения базовых юридических советов. Инструмент сэкономил мне время — всё было чётко и понятно. Подойдет тем, кто хочет быстро разобраться в вопросе без сложностей."`,
             translation_note: "(translated from original)",
             tooltip_lang: "Change language",
         },
