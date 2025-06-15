@@ -1,18 +1,15 @@
-html { 
-    scroll-behavior: smooth; 
-}
-
+html { scroll-behavior: smooth; }
 body {
     font-family: 'Inter', sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
-.smooth-transition { 
-    transition: all 0.3s ease-in-out; 
-}
+.smooth-transition { transition: all 0.3s ease-in-out; }
 
-.glow-text { 
-    text-shadow: 0 0 15px #F7A027, 0 0 25px rgba(247, 160, 39, 0.5); 
+.glow-text {
+    text-shadow: 0 0 15px #F7A027, 0 0 25px rgba(247, 160, 39, 0.5);
 }
 
 .reveal {
@@ -20,7 +17,6 @@ body {
     transform: translateY(30px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-
 .reveal.visible {
     opacity: 1;
     transform: translateY(0);
@@ -53,54 +49,88 @@ body {
     visibility: visible;
 }
 
+/* --- УЛУЧШЕННЫЕ КАРТОЧКИ ПОРТФОЛИО --- */
 .portfolio-card {
-    @apply relative rounded-2xl overflow-hidden shadow-lg cursor-pointer;
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.portfolio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
 .portfolio-image {
-    @apply w-full h-full object-cover smooth-transition group-hover:scale-110;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+.group:hover .portfolio-image {
+    transform: scale(1.05);
 }
 
 .portfolio-overlay {
-    @apply absolute inset-0 bg-gray-900/70 flex flex-col items-center justify-center text-white p-6 text-center opacity-0 group-hover:opacity-100;
+    position: absolute;
+    inset: 0;
+    background-color: rgba(31, 41, 55, 0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    text-align: center;
+    opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
-
 .group:hover .portfolio-overlay {
+    opacity: 1;
     transform: translateY(0);
 }
 
 .portfolio-button {
-    @apply inline-block mt-4 px-5 py-2 bg-brand-orange text-white rounded-full font-semibold hover:opacity-90 smooth-transition;
+    margin-top: 1rem;
+    padding: 0.5rem 1.25rem;
+    background-color: #F7A027;
+    color: white;
+    border-radius: 9999px;
+    font-weight: 600;
     text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+.portfolio-button:hover {
+    opacity: 0.9;
 }
 
-.star-rating {
-    display: flex;
-    gap: 2px;
+/* --- ОТЗЫВЫ / УСЛУГИ HOVER --- */
+.testimonial-card,
+.service-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.star-rating svg {
-    width: 20px;
-    height: 20px;
-    color: #F7A027; 
-}
-.translation-note {
-    font-size: 12px;
-    font-style: italic;
-    color: #9CA3AF; 
-    margin-top: 12px;
-    display: none; 
-}
-.dark .translation-note {
-    color: #6B7280;
+.testimonial-card:hover,
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-#gallery-image {
-    transition: opacity 0.2s ease-in-out;
+/* --- ТЁМНАЯ ТЕМА СЕКЦИЙ --- */
+.dark #services,
+.dark #testimonials,
+.dark #portfolio {
+    background-color: rgba(255,255,255,0.05);
 }
 
-/* --- Адаптивный header для мобильных устройств --- */
+footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* --- МЕДИА HEADER ДЛЯ МОБИЛОК --- */
 @media (max-width: 640px) {
   header {
     flex-direction: column;
@@ -145,11 +175,9 @@ body {
   }
 }
 
-/* Для избежания наложения даже при длинных названиях */
 header > a .truncate {
   max-width: 90vw;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
