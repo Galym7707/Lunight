@@ -150,3 +150,10 @@ a.btn-contact:hover, .portfolio-button:hover, .open-tawk-chat:hover {
   color: #23284a !important;
   transform: scale(1.08) translateY(-2px);
 }
+
+.star-rating svg {
+  color: #F7A027 !important; /* Оранжевый брендовый */
+}
+.dark .star-rating svg {
+  color: #FFD580 !important; /* Светло-оранжевый в темной теме */
+}
