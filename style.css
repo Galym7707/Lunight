@@ -1,183 +1,152 @@
-html { scroll-behavior: smooth; }
-body {
-    font-family: 'Inter', sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    padding-left: 1rem;
-    padding-right: 1rem;
+/* ========== Общие внутренние отступы для секций ========== */
+section,
+footer,
+header,
+main > * {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+@media (min-width: 640px) {
+  section,
+  footer,
+  header,
+  main > * {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  section,
+  footer,
+  header,
+  main > * {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
 
-.smooth-transition { transition: all 0.3s ease-in-out; }
-
-.glow-text {
-    text-shadow: 0 0 15px #F7A027, 0 0 25px rgba(247, 160, 39, 0.5);
+/* ========== Улучшения header ========== */
+header {
+  min-height: 48px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background: rgba(255,255,255,0.9);
+  transition: all 0.3s;
 }
-
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-[data-lang-key] {
-    transition: opacity 0.2s ease-in-out;
-}
-
-.tooltip {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 8px;
-    background-color: #1F2937;
-    color: white;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 12px;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    pointer-events: none;
-}
-
-.group:hover .tooltip {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* --- УЛУЧШЕННЫЕ КАРТОЧКИ ПОРТФОЛИО --- */
-.portfolio-card {
-    position: relative;
-    border-radius: 1rem;
-    overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.portfolio-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-}
-
-.portfolio-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out;
-}
-.group:hover .portfolio-image {
-    transform: scale(1.05);
-}
-
-.portfolio-overlay {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(31, 41, 55, 0.7);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1.5rem;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-.group:hover .portfolio-overlay {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.portfolio-button {
-    margin-top: 1rem;
-    padding: 0.5rem 1.25rem;
-    background-color: #F7A027;
-    color: white;
-    border-radius: 9999px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-}
-.portfolio-button:hover {
-    opacity: 0.9;
-}
-
-/* --- ОТЗЫВЫ / УСЛУГИ HOVER --- */
-.testimonial-card,
-.service-card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.testimonial-card:hover,
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
-
-/* --- ТЁМНАЯ ТЕМА СЕКЦИЙ --- */
-.dark #services,
-.dark #testimonials,
-.dark #portfolio {
-    background-color: rgba(255,255,255,0.05);
-}
-
-footer {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-}
-
-/* --- МЕДИА HEADER ДЛЯ МОБИЛОК --- */
 @media (max-width: 640px) {
   header {
     flex-direction: column;
-    align-items: stretch;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    gap: 4px;
+    align-items: flex-start;
+    padding: 0.5rem 1rem;
+    min-height: 0;
   }
-  header > a {
-    justify-content: center;
-    min-width: 0;
-    flex-shrink: 1;
-    font-size: 1.25rem;
-    gap: 4px;
-  }
-  header > div {
+  header .flex {
+    flex-direction: column;
     width: 100%;
-    justify-content: space-between !important;
-    gap: 2px !important;
-    margin-left: 0 !important;
-    margin-top: 4px;
-    flex-wrap: wrap;
   }
-  #lang-switcher,
-  #theme-toggle,
-  .open-tawk-chat {
-    min-width: 36px;
-    padding: 0.25rem 0.35rem;
-    font-size: 0.95rem;
-  }
-  #lang-switcher-text {
-    font-size: 0.95rem;
-  }
-  .tooltip {
-    white-space: normal;
-    min-width: unset;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-  }
-  nav#main-nav {
-    display: none !important;
+  #main-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
   }
 }
 
-header > a .truncate {
-  max-width: 90vw;
+/* ========== Карточки портфолио и отзывов ========== */
+.portfolio-card,
+.testimonial-card {
+  background: var(--card-bg, #fff);
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 24px 0 rgba(40, 40, 90, 0.06);
+  transition: transform 0.25s cubic-bezier(.4,2,.3,1), box-shadow 0.25s, background 0.25s;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+}
+.dark .portfolio-card,
+.dark .testimonial-card {
+  --card-bg: #23284a;
+  background: var(--card-bg);
+  box-shadow: 0 4px 32px 0 rgba(30,30,64,0.24);
+}
+.portfolio-card:hover,
+.testimonial-card:hover {
+  transform: scale(1.035) translateY(-6px);
+  box-shadow: 0 8px 32px 0 rgba(40, 40, 90, 0.15);
+}
+
+/* ========== Анимация для изображений портфолио ========== */
+.portfolio-card .portfolio-image {
+  transition: transform 0.4s cubic-bezier(.4,2,.3,1), box-shadow 0.4s;
+  border-radius: 0.75rem;
+}
+.portfolio-card:hover .portfolio-image {
+  transform: scale(1.06);
+  box-shadow: 0 16px 40px 0 rgba(40, 40, 90, 0.22);
+}
+
+/* ========== Разделённые цвета секций для тёмной темы ========== */
+.dark #services {
+  background: #222844 !important;
+}
+.dark #portfolio {
+  background: #171b36 !important;
+}
+.dark #testimonials {
+  background: #23284a !important;
+}
+.dark section,
+.dark footer {
+  border-color: #2b328b;
+}
+
+/* ========== Hover-эффекты на карточки отзывов и услуг ========== */
+.testimonial-card,
+.services-card {
+  cursor: pointer;
+}
+.testimonial-card:hover,
+.services-card:hover {
+  transform: scale(1.045);
+  box-shadow: 0 16px 48px 0 rgba(40, 40, 90, 0.18);
+  background: #fafafa;
+}
+.dark .testimonial-card:hover,
+.dark .services-card:hover {
+  background: #222844;
+}
+
+/* ========== Уменьшаем футер ========== */
+footer {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+  min-height: 0;
+}
+footer .mt-8 {
+  margin-top: 0.5rem !important;
+}
+footer .flex {
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+footer p.text-sm {
+  margin-bottom: 0.25rem;
+}
+
+/* ========== Кнопки (универсальный стиль для кнопок) ========== */
+a.btn-contact, .portfolio-button, .open-tawk-chat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #2B328B;
+  color: #fff !important;
+  border-radius: 9999px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 2px 12px 0 rgba(40,40,90,0.08);
+  transition: background 0.2s, color 0.2s, transform 0.18s;
+  text-decoration: none;
+}
+a.btn-contact:hover, .portfolio-button:hover, .open-tawk-chat:hover {
+  background: #F7A027;
+  color: #23284a !important;
+  transform: scale(1.08) translateY(-2px);
 }
