@@ -99,3 +99,57 @@ body {
 #gallery-image {
     transition: opacity 0.2s ease-in-out;
 }
+
+/* --- Адаптивный header для мобильных устройств --- */
+@media (max-width: 640px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    gap: 4px;
+  }
+  header > a {
+    justify-content: center;
+    min-width: 0;
+    flex-shrink: 1;
+    font-size: 1.25rem;
+    gap: 4px;
+  }
+  header > div {
+    width: 100%;
+    justify-content: space-between !important;
+    gap: 2px !important;
+    margin-left: 0 !important;
+    margin-top: 4px;
+    flex-wrap: wrap;
+  }
+  #lang-switcher,
+  #theme-toggle,
+  .open-tawk-chat {
+    min-width: 36px;
+    padding: 0.25rem 0.35rem;
+    font-size: 0.95rem;
+  }
+  #lang-switcher-text {
+    font-size: 0.95rem;
+  }
+  .tooltip {
+    white-space: normal;
+    min-width: unset;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  nav#main-nav {
+    display: none !important;
+  }
+}
+
+/* Для избежания наложения даже при длинных названиях */
+header > a .truncate {
+  max-width: 90vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
