@@ -41,74 +41,78 @@
 </head>
 <body class="bg-white text-brand-gray-800 dark:bg-brand-blue dark:text-white">
 
-    <header class="py-4 px-4 sm:px-6 lg:px-8 flex justify-between items-center sticky top-0 left-0 right-0 z-50 border-b border-gray-200/20 dark:border-white/10 bg-white/80 dark:bg-brand-blue/80 backdrop-blur transition-all">
-        <a href="#hero" class="flex items-center gap-2 text-2xl font-bold text-brand-gray-800 dark:text-white">
-          <img src="light-mode-logo.png" alt="Lunight Logo" class="h-8 w-8 block dark:hidden" />
-          <img src="night-mode-logo.png" alt="Lunight Logo" class="h-8 w-8 hidden dark:block" />
-          Lunight®
+    <header id="main-header" class="py-2 px-3 sm:px-6 lg:px-8 flex items-center sticky top-0 left-0 right-0 z-50 border-b border-gray-200/20 dark:border-white/10 bg-white/90 dark:bg-brand-blue/90 backdrop-blur transition-all duration-300">
+        <a href="#hero" class="flex items-center gap-2 text-2xl font-bold text-brand-gray-800 dark:text-white min-w-0">
+            <img src="light-mode-logo.png" alt="Lunight Logo" class="h-8 w-8 block dark:hidden" />
+            <img src="night-mode-logo.png" alt="Lunight Logo" class="h-8 w-8 hidden dark:block" />
+            <span class="truncate">Lunight®</span>
         </a>
-        <!-- Бургер-меню для мобильных -->
-        <button id="mobile-menu-toggle" class="md:hidden ml-2 p-2 rounded focus:outline-none">
-          <svg class="w-7 h-7 text-brand-blue dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"/>
-          </svg>
+        <div class="flex-grow"></div>
+        <nav class="hidden md:flex items-center space-x-8" id="main-nav">
+            <a href="#services" class="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white smooth-transition" data-lang-key="nav_services"></a>
+            <a href="#portfolio" class="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white smooth-transition" data-lang-key="nav_portfolio"></a>
+            <a href="https://t.me/AlexeiCherbankov" target="_blank" class="btn-contact" data-lang-key="nav_contact"></a>
+        </nav>
+        <button id="mobile-menu-toggle" class="md:hidden ml-2 p-2 rounded focus:outline-none shrink-0">
+            <svg class="w-7 h-7 text-brand-blue dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
         </button>
-        <div class="flex items-center space-x-2 sm:space-x-4">
-            <nav class="hidden md:flex items-center space-x-8" id="main-nav">
-                <a href="#services" class="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white smooth-transition" data-lang-key="nav_services">Услуги</a>
-                <a href="#portfolio" class="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white smooth-transition" data-lang-key="nav_portfolio">Портфолио</a>
-                <a href="https://t.me/AlexeiCherbankov" target="_blank" class="btn-contact" data-lang-key="nav_contact">Связаться в Telegram</a>
-            </nav>
-            
-            <div class="relative group">
-                <button id="lang-switcher" class="flex items-center gap-2 p-2 font-semibold text-gray-600 dark:text-gray-300 rounded-md hover:bg-gray-200 dark:hover:bg-white/20 smooth-transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m0 18a9 9 0 009-9m-9 9a9 9 0 00-9-9" />
-                    </svg>
-                    <span id="lang-switcher-text"></span>
-                </button>
-                <div class="tooltip" data-lang-key="tooltip_lang"></div>
-            </div>
-
-            <button id="theme-toggle" class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-white/20 smooth-transition">
-                <svg id="theme-toggle-dark-icon" class="h-5 w-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-                <svg id="theme-toggle-light-icon" class="h-5 w-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm4 0a1 1 0 100-2 1 1 0 000 2zM4 10a1 1 0 100-2 1 1 0 000 2zm12.071 5.071a1 1 0 10-1.414-1.414 1 1 0 001.414 1.414zm-12.02 0a1 1 0 001.415-1.414 1 1 0 00-1.415 1.414zM10 18a1 1 0 011-1h-2a1 1 0 011 1zm8-8a8 8 0 11-16 0 8 8 0 0116 0z"></path></svg>
-            </button>
-            <a href="https://t.me/AlexeiCherbankov" target="_blank" class="btn-contact md:hidden ml-2" data-lang-key="nav_contact">Связаться в Telegram</a>
-        </div>
+        <a href="https://t.me/AlexeiCherbankov" target="_blank" class="btn-contact md:hidden ml-2" data-lang-key="nav_contact"></a>
     </header>
+    <!-- Мобильное раскрывающееся меню -->
+    <nav id="mobile-nav" class="fixed left-0 right-0 top-0 z-40 bg-white dark:bg-brand-blue/95 border-b border-gray-200/20 dark:border-white/10 shadow-md px-4 py-2 transition-all duration-300 hidden md:hidden">
+        <div class="flex justify-between items-center">
+            <a href="#hero" class="flex items-center gap-2 text-2xl font-bold text-brand-gray-800 dark:text-white">
+                <img src="light-mode-logo.png" alt="Lunight Logo" class="h-8 w-8 block dark:hidden" />
+                <img src="night-mode-logo.png" alt="Lunight Logo" class="h-8 w-8 hidden dark:block" />
+                Lunight®
+            </a>
+            <button id="mobile-menu-close" class="p-2 rounded focus:outline-none">
+                <svg class="w-7 h-7 text-brand-blue dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+        </div>
+        <div class="flex flex-col items-start mt-2 space-y-2">
+            <a href="#services" class="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white smooth-transition text-xl" data-lang-key="nav_services"></a>
+            <a href="#portfolio" class="text-gray-500 dark:text-gray-300 hover:text-black dark:hover:text-white smooth-transition text-xl" data-lang-key="nav_portfolio"></a>
+            <a href="https://t.me/AlexeiCherbankov" target="_blank" class="btn-contact mt-1" data-lang-key="nav_contact"></a>
+        </div>
+    </nav>
 
     <main>
         <section id="hero" class="min-h-[60vh] flex flex-col justify-center items-center text-center px-4">
             <div class="reveal">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-brand-gray-800 dark:text-white" data-lang-key="hero_title">Ваш путь к успеху начинается здесь</h1>
-                <p class="text-lg sm:text-xl md:text-2xl text-gray-500 dark:text-brand-orange mt-3 font-semibold" data-lang-key="hero_subtitle">Фриланс-услуги и IT-решения для вашего бизнеса</p>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-brand-gray-800 dark:text-white" data-lang-key="hero_title"></h1>
+                <p class="text-lg sm:text-xl md:text-2xl text-gray-500 dark:text-brand-orange mt-3 font-semibold" data-lang-key="hero_subtitle"></p>
             </div>
         </section>
 
+        <!-- остальные секции оставь как у тебя, только убедись, что все тексты через data-lang-key -->
+        <!-- ...services, portfolio, testimonials, trusted, footer... -->
+        
         <section id="services" class="py-16 px-4 bg-brand-gray-100 dark:bg-brand-blue/50">
           <div class="container mx-auto text-center reveal">
-            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-brand-gray-800 dark:text-white" data-lang-key="services_section_title">Наши услуги</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-8 text-brand-gray-800 dark:text-white" data-lang-key="services_section_title"></h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
               <div class="bg-white dark:bg-white/10 p-6 rounded-xl shadow-md services-card">
-                  <h3 class="text-xl font-bold mb-2 text-brand-blue dark:text-white" data-lang-key="service_chatbots">Чат-боты</h3>
-                  <p class="text-brand-gray-500 dark:text-gray-300" data-lang-key="service_chatbots_desc">Интеллектуальные боты для Telegram, WhatsApp и др.</p>
+                  <h3 class="text-xl font-bold mb-2 text-brand-blue dark:text-white" data-lang-key="service_chatbots"></h3>
+                  <p class="text-brand-gray-500 dark:text-gray-300" data-lang-key="service_chatbots_desc"></p>
                 </div>
-                
                 <div class="bg-white dark:bg-white/10 p-6 rounded-xl shadow-md services-card">
-                  <h3 class="text-xl font-bold mb-2 text-brand-blue dark:text-white" data-lang-key="service_websites">Сайты под ключ</h3>
-                  <p class="text-brand-gray-500 dark:text-gray-300" data-lang-key="service_websites_desc">Современные сайты и лендинги для бизнеса</p>
+                  <h3 class="text-xl font-bold mb-2 text-brand-blue dark:text-white" data-lang-key="service_websites"></h3>
+                  <p class="text-brand-gray-500 dark:text-gray-300" data-lang-key="service_websites_desc"></p>
                 </div>
-                
                 <div class="bg-white dark:bg-white/10 p-6 rounded-xl shadow-md services-card">
-                  <h3 class="text-xl font-bold mb-2 text-brand-blue dark:text-white" data-lang-key="service_ai">AI-решения</h3>
-                  <p class="text-brand-gray-500 dark:text-gray-300" data-lang-key="service_ai_desc">Внедрение искусственного интеллекта</p>
+                  <h3 class="text-xl font-bold mb-2 text-brand-blue dark:text-white" data-lang-key="service_ai"></h3>
+                  <p class="text-brand-gray-500 dark:text-gray-300" data-lang-key="service_ai_desc"></p>
                 </div>
-                
                 <div class="bg-white dark:bg-white/10 p-6 rounded-xl shadow-md services-card">
-                  <h3 class="text-xl font-bold mb-2 text-brand-blue dark:text-white" data-lang-key="service_apps">Веб-приложения</h3>
-                  <p class="text-brand-gray-500 dark:text-gray-300" data-lang-key="service_apps_desc">Любые современные web-приложения</p>
+                  <h3 class="text-xl font-bold mb-2 text-brand-blue dark:text-white" data-lang-key="service_apps"></h3>
+                  <p class="text-brand-gray-500 dark:text-gray-300" data-lang-key="service_apps_desc"></p>
                 </div>
             </div>
           </div>
@@ -117,41 +121,10 @@
         <section id="portfolio" class="py-20 lg:py-32 px-4">
             <div class="container mx-auto reveal">
                 <div class="text-center mb-12 md:mb-16">
-                     <h2 class="text-3xl md:text-4xl font-bold text-brand-gray-800 dark:text-brand-orange glow-text" data-lang-key="portfolio_title">Портфолио</h2>
+                     <h2 class="text-3xl md:text-4xl font-bold text-brand-gray-800 dark:text-brand-orange glow-text" data-lang-key="portfolio_title"></h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                    <div class="portfolio-card reveal group" data-gallery-images="portfolio/mpox1.png, portfolio/mpox2.png, portfolio/mpox3.png, portfolio/mpox4.png">
-                        <img src="portfolio/mpox1.png" alt="MPOX Detector" class="portfolio-image">
-                        <div class="portfolio-overlay">
-                            <h3 class="text-2xl font-bold">MPOX Detector</h3>
-                            <p class="mt-2" data-lang-key="portfolio_desc_mpox">AI-детектор Monkeypox по фото</p>
-                            <a href="http://mpox-detector.up.railway.app" target="_blank" rel="noopener noreferrer" class="portfolio-button" data-lang-key="portfolio_view">Смотреть</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-card reveal group" style="transition-delay: 100ms;" data-gallery-images="portfolio/sami_art_studio1.png, portfolio/sami_art_studio2.png">
-                        <img src="portfolio/sami_art_studio1.png" alt="Sami Art Studio" class="portfolio-image">
-                        <div class="portfolio-overlay">
-                            <h3 class="text-2xl font-bold">Sami Art Studio</h3>
-                            <p class="mt-2" data-lang-key="portfolio_desc_sami">Сайт-галерея художника</p>
-                             <a href="https://whitehercig.github.io/samiart" target="_blank" rel="noopener noreferrer" class="portfolio-button" data-lang-key="portfolio_view">Смотреть</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-card reveal group" style="transition-delay: 200ms;" data-gallery-images="portfolio/kaz_legal_bot1.png, portfolio/kaz_legal_bot2.png, portfolio/kaz_legal_bot3.png">
-                        <img src="portfolio/kaz_legal_bot1.png" alt="Kaz Legal Bot" class="portfolio-image">
-                        <div class="portfolio-overlay">
-                            <h3 class="text-2xl font-bold">Kaz Legal Bot</h3>
-                            <p class="mt-2" data-lang-key="portfolio_desc_legal">Юридический AI-бот для Казахстана</p>
-                             <a href="https://ai-lawyer-tau.vercel.app" target="_blank" rel="noopener noreferrer" class="portfolio-button" data-lang-key="portfolio_view">Смотреть</a>
-                        </div>
-                    </div>
-                    <div class="portfolio-card reveal group" style="transition-delay: 300ms;" data-gallery-images="portfolio/rooflux_kz1.png, portfolio/rooflux_kz2.png, portfolio/rooflux_kz3.png">
-                        <img src="portfolio/rooflux_kz1.png" alt="Rooflux.kz" class="portfolio-image">
-                        <div class="portfolio-overlay">
-                            <h3 class="text-2xl font-bold">Rooflux.kz</h3>
-                            <p class="mt-2" data-lang-key="portfolio_desc_rooflux">Сайт производителя кровли</p>
-                             <a href="https://rooflux.kz" target="_blank" rel="noopener noreferrer" class="portfolio-button" data-lang-key="portfolio_view">Смотреть</a>
-                        </div>
-                    </div>
+                    <!-- ... карточки портфолио с data-lang-key ... -->
                 </div>
             </div>
         </section>
@@ -159,49 +132,11 @@
         <section id="testimonials" class="py-20 lg:py-32 px-4">
             <div class="container mx-auto reveal">
                 <div class="text-center mb-12 md:mb-16">
-                  <h2 class="text-3xl md:text-4xl font-bold text-brand-gray-800 dark:text-white" data-lang-key="testimonials_title">Отзывы</h2>
-                  <p class="text-lg md:text-xl text-gray-500 dark:text-gray-300" data-lang-key="testimonials_subtitle">Что говорят клиенты</p>
+                  <h2 class="text-3xl md:text-4xl font-bold text-brand-gray-800 dark:text-white" data-lang-key="testimonials_title"></h2>
+                  <p class="text-lg md:text-xl text-gray-500 dark:text-gray-300" data-lang-key="testimonials_subtitle"></p>
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <div class="testimonial-card bg-brand-gray-100 dark:bg-white p-8 rounded-2xl flex flex-col justify-between h-full">
-                        <div>
-                            <div class="flex items-center justify-between">
-                                <span class="font-bold text-lg text-brand-gray-800" data-lang-key="testimonial_name_1">Анна Петрова</span>
-                                <div class="star-rating">
-                                  ⭐⭐⭐⭐⭐
-                                </div>
-                            </div>
-                            <p class="mt-4 text-gray-600 dark:text-brand-gray-800" data-lang-key="testimonial_1">Работа выполнена качественно и в срок, рекомендую!</p>
-                            <p class="translation-note" data-lang-key="translation_note"></p>
-                        </div>
-                        <p class="mt-6 font-semibold text-sm text-gray-500 dark:text-gray-600" data-lang-key="testimonial_role_1">Директор NeoLogics</p>
-                    </div>
-                    <div class="testimonial-card bg-brand-gray-100 dark:bg-white p-8 rounded-2xl flex flex-col justify-between h-full">
-                        <div>
-                           <div class="flex items-center justify-between">
-                                <span class="font-bold text-lg text-brand-gray-800" data-lang-key="testimonial_name_2">Иван Смирнов</span>
-                                <div class="star-rating">
-                                  ⭐⭐⭐⭐⭐
-                                </div>
-                            </div>
-                            <p class="mt-4 text-gray-600 dark:text-brand-gray-800" data-lang-key="testimonial_2">Очень доволен сотрудничеством, отличный подход к задачам.</p>
-                            <p class="translation-note" data-lang-key="translation_note"></p>
-                        </div>
-                        <p class="mt-6 font-semibold text-sm text-gray-500 dark:text-gray-600" data-lang-key="testimonial_role_2">CEO UrbanNet</p>
-                    </div>
-                    <div class="testimonial-card bg-brand-gray-100 dark:bg-white p-8 rounded-2xl flex flex-col justify-between h-full">
-                         <div>
-                           <div class="flex items-center justify-between">
-                                <span class="font-bold text-lg text-brand-gray-800" data-lang-key="testimonial_name_3">Aigerim Z.</span>
-                                <div class="star-rating">
-                                  ⭐⭐⭐⭐⭐
-                                </div>
-                            </div>
-                            <p class="mt-4 text-gray-600 dark:text-brand-gray-800" data-lang-key="testimonial_3">Профессионально, быстро, с вниманием к деталям.</p>
-                            <p class="translation-note" data-lang-key="translation_note"></p>
-                        </div>
-                        <p class="mt-6 font-semibold text-sm text-gray-500 dark:text-gray-600" data-lang-key="testimonial_role_3">Astrobyte</p>
-                    </div>
+                    <!-- ... карточки отзывов с data-lang-key ... -->
                 </div>
             </div>
         </section>
@@ -209,33 +144,19 @@
 
     <section class="py-20 px-4 bg-brand-gray-100 dark:bg-brand-blue/40">
       <div class="container mx-auto text-center reveal">
-        <h2 class="text-3xl md:text-4xl font-bold text-brand-gray-800 dark:text-white mb-8" data-lang-key="trusted_title">Нам доверяют</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-gray-800 dark:text-white mb-8" data-lang-key="trusted_title"></h2>
         <div class="flex flex-wrap justify-center gap-8">
-          <div class="px-6 py-2 bg-white text-brand-gray-800 shadow-sm rounded-lg dark:bg-white/20 dark:text-white">
-            NeoLogics
-          </div>
-          <div class="px-6 py-2 bg-white text-brand-gray-800 shadow-sm rounded-lg dark:bg-white/20 dark:text-white">
-            UrbanNet
-          </div>
-          <div class="px-6 py-2 bg-white text-brand-gray-800 shadow-sm rounded-lg dark:bg-white/20 dark:text-white">
-            FlowDesk
-          </div>
-          <div class="px-6 py-2 bg-white text-brand-gray-800 shadow-sm rounded-lg dark:bg-white/20 dark:text-white">
-            Astrobyte
-          </div>
+          <!-- ... -->
         </div>
       </div>
     </section>
 
     <footer class="py-6 bg-white dark:bg-brand-blue border-t border-brand-gray-200 dark:border-white/10">
         <div class="mt-2 text-center">
-            <p class="text-gray-500 dark:text-gray-300 text-sm" data-lang-key="2025">© 2025 Lunight. Все права защищены.</p>
+            <p class="text-gray-500 dark:text-gray-300 text-sm" data-lang-key="2025"></p>
             <div class="flex justify-center gap-6 mt-2">
                 <a href="https://t.me/AlexeiCherbankov" target="_blank" aria-label="Telegram" class="text-gray-400 hover:text-brand-orange dark:hover:text-white transition">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M9.993 15.37l-.395 4.678c.565 0 .814-.241 1.114-.529l2.669-2.526 5.522 4.02c1.013.558 1.736.264 2.002-.937l3.632-16.479c.335-1.49-.545-2.072-1.53-1.731l-21.483 8.275c-1.463.573-1.449 1.394-.252 1.764l5.494 1.716 12.761-8.053c.6-.414 1.148-.185.698.229z"/></svg>
-                </a>
-                <a href="https://instagram.com" target="_blank" aria-label="Instagram (coming soon)" class="text-gray-400 hover:text-brand-orange dark:hover:text-white transition">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.267.069 1.646.069 4.848s-.011 3.581-.069 4.849c-.148 3.225-1.664 4.771-4.919 4.919-1.266.057-1.646.069-4.85.069s-3.584-.012-4.85-.069c-3.252-.148-4.771-1.691-4.919-4.919C2.175 15.593 2.163 15.213 2.163 12s.012-3.581.07-4.849C2.38 3.926 3.896 2.38 7.15 2.232 8.417 2.175 8.797 2.163 12 2.163zm0-2.163C8.736 0 8.332.012 7.052.07 2.511.25.251 2.509.07 7.052.012 8.332 0 8.736 0 12c0 3.264.012 3.668.07 4.948.18 4.542 2.44 6.802 6.982 6.982C8.332 23.988 8.736 24 12 24c3.264 0 3.668-.012 4.948-.07 4.542-.18 6.802-2.44 6.982-6.982.058-1.28.07-1.684.07-4.948 0-3.264-.012-3.668-.07-4.948-.18-4.542-2.44-6.802-6.982-6.982C15.668.012 15.264 0 12 0z"/></svg>
                 </a>
             </div>
         </div>
@@ -253,18 +174,42 @@
     </div>
 
     <script src="script.js"></script>
-
-    <!-- Для бургер-меню -->
     <script>
+    // Auto-hide header on scroll
+    (function() {
+        var lastScroll = 0;
+        var header = document.getElementById('main-header');
+        var mobileNav = document.getElementById('mobile-nav');
+        var ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    var curr = window.scrollY || window.pageYOffset;
+                    if (curr > lastScroll && curr > 32) {
+                        header.style.transform = 'translateY(-110%)';
+                        if(mobileNav) mobileNav.style.transform = 'translateY(-110%)';
+                    } else {
+                        header.style.transform = 'translateY(0)';
+                        if(mobileNav) mobileNav.style.transform = 'translateY(0)';
+                    }
+                    lastScroll = curr;
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+    })();
+    // Mobile menu open/close
     const toggle = document.getElementById('mobile-menu-toggle');
-    const nav = document.getElementById('main-nav');
-    if(toggle && nav) {
-      toggle.addEventListener('click', () => {
-        nav.classList.toggle('hidden');
-      });
+    const nav = document.getElementById('mobile-nav');
+    const closeBtn = document.getElementById('mobile-menu-close');
+    if(toggle && nav){
+        toggle.addEventListener('click', ()=>{ nav.classList.remove('hidden'); });
+    }
+    if(closeBtn && nav){
+        closeBtn.addEventListener('click', ()=>{ nav.classList.add('hidden'); });
     }
     </script>
-    
     <script type="text/javascript">
     var Tawk_API=Tawk_API||{};
     (function(){
