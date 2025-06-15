@@ -157,3 +157,9 @@ a.btn-contact:hover, .portfolio-button:hover, .open-tawk-chat:hover {
 .dark .star-rating svg {
   color: #FFD580 !important; /* Светло-оранжевый в темной теме */
 }
+
+/* Округление логотипа Lunight */
+.logo-img {
+  border-radius: 9999px !important;
+  object-fit: cover;
+}
