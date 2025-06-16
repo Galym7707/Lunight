@@ -15,11 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
         if (mode === 'dark') {
             document.documentElement.classList.add('dark');
             if (darkIcon) darkIcon.classList.add('hidden');
-            if (lightIcon) lightIcon.classList.remove('hidden');
+            if (lightIcon) lightIcon.classList.remove('hidden'); // ← показываем солнце
         } else {
             document.documentElement.classList.remove('dark');
             if (lightIcon) lightIcon.classList.add('hidden');
-            if (darkIcon) darkIcon.classList.remove('hidden');
+            if (darkIcon) darkIcon.classList.remove('hidden'); // ← показываем луну
         }
         localStorage.setItem('theme', mode);
         updateFavicon(mode);
