@@ -62,10 +62,16 @@ header {
 }
 .dark .portfolio-card,
 .dark .testimonial-card {
-  --card-bg: #23284a;
+  --card-bg: #2c3153; /* более выразительный фон */
   background: var(--card-bg);
-  box-shadow: 0 4px 32px 0 rgba(30,30,64,0.24);
+  box-shadow: 0 4px 32px 0 rgba(20, 20, 40, 0.4);
 }
+
+.dark .portfolio-card:hover,
+.dark .testimonial-card:hover {
+  background: #2a2f54;
+}
+
 .portfolio-card:hover,
 .testimonial-card:hover {
   transform: scale(1.035) translateY(-6px);
