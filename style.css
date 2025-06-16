@@ -158,10 +158,10 @@ a.btn-contact:hover, .portfolio-button:hover, .open-tawk-chat:hover {
 }
 
 .star-rating svg {
-  color: #F7A027 !important; /* Оранжевый брендовый */
+  color: #F7A027 !important; /* яркий брендовый оранжевый */
 }
 .dark .star-rating svg {
-  color: #FFD580 !important; /* Светло-оранжевый в темной теме */
+  color: #FFD580 !important; /* светлее в тёмной теме */
 }
 
 /* Округление логотипа Lunight */
