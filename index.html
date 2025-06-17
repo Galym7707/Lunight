@@ -67,9 +67,20 @@
               <path d="M21.752 15.002A9.718 9.718 0 0112 22C6.477 22 2 17.523 2 12c0-4.418 2.859-8.167 7-9.542a1 1 0 01.997 1.748A7.001 7.001 0 1019.794 13.56a1 1 0 011.748.997z"/>
             </svg>
         </button>
-        <!-- Бургер-меню и кнопка Telegram для мобилки убраны -->
-    </div>
-</header>
+        
+        <a 
+          href="https://t.me/AlexeiCherbankov"
+          target="_blank"
+          class="btn-contact flex items-center gap-2 px-4 py-2 rounded-md font-semibold text-white bg-brand-orange hover:bg-brand-blue transition dark:bg-brand-orange dark:hover:bg-brand-blue"
+          style="margin-left: 8px;"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M9.993 15.37l-.395 4.678c.565 0 .814-.241 1.114-.529l2.669-2.526 5.522 4.02c1.06.583 1.813.277 2.08-.98l3.772-17.658c.342-1.557-.567-2.171-1.597-1.793L1.513 9.76c-1.532.602-1.515 1.463-.262 1.837l4.528 1.416 10.496-6.613c.495-.322.946-.144.574.205"/>
+          </svg>
+          <span class="hidden sm:inline" data-lang-key="nav_contact">Contact via Telegram</span>
+        </a>
+            </div>
+        </header>
 
 <nav id="mobile-nav" class="fixed left-0 right-0 top-0 z-40 bg-white dark:bg-brand-blue/95 border-b border-gray-200/20 dark:border-white/10 shadow-md px-4 py-2 transition-all duration-300 hidden md:hidden">
     <div class="flex justify-between items-center">
@@ -288,8 +299,10 @@ if(closeBtn && nav){
     closeBtn.addEventListener('click', ()=>{ nav.classList.add('hidden'); });
 }
 </script>
+<!--Start of Tawk.to Script-->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{};
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+Tawk_API.visitor = { language : 'ru' };
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;
@@ -299,5 +312,6 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
+<!--End of Tawk.to Script-->
 </body>
 </html>
