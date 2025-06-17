@@ -69,7 +69,10 @@ header {
 
 .dark .portfolio-card:hover,
 .dark .testimonial-card:hover {
-  background: #2a2f54;
+  background-color: rgba(43, 50, 139, 0.12) !important; /* светло-синий полупрозрачный */
+  box-shadow: 0 0 18px 0 rgba(43, 50, 139, 0.25);
+  transition: background 0.2s, box-shadow 0.2s;
+  border: 1px solid #2b328b44;
 }
 
 .portfolio-card:hover,
@@ -116,7 +119,10 @@ header {
 }
 .dark .testimonial-card:hover,
 .dark .services-card:hover {
-  background: #222844;
+  background-color: rgba(43, 50, 139, 0.12) !important; /* светло-синий полупрозрачный */
+  box-shadow: 0 0 18px 0 rgba(43, 50, 139, 0.25);
+  transition: background 0.2s, box-shadow 0.2s;
+  border: 1px solid #2b328b44;
 }
 
 /* ========== Уменьшаем футер ========== */
