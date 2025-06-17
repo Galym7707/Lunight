@@ -63,13 +63,11 @@ header {
 .dark .portfolio-card,
 .dark .testimonial-card {
   --card-bg: #2c3153; /* более выразительный фон */
-  background: var(--card-bg);
   box-shadow: 0 4px 32px 0 rgba(20, 20, 40, 0.4);
 }
 
 .dark .portfolio-card:hover,
 .dark .testimonial-card:hover {
-  background-color: rgba(43, 50, 139, 0.12) !important; /* светло-синий полупрозрачный */
   box-shadow: 0 0 18px 0 rgba(43, 50, 139, 0.25);
   transition: background 0.2s, box-shadow 0.2s;
   border: 1px solid #2b328b44;
@@ -119,7 +117,6 @@ header {
 }
 .dark .testimonial-card:hover,
 .dark .services-card:hover {
-  background-color: rgba(43, 50, 139, 0.12) !important; /* светло-синий полупрозрачный */
   box-shadow: 0 0 18px 0 rgba(43, 50, 139, 0.25);
   transition: background 0.2s, box-shadow 0.2s;
   border: 1px solid #2b328b44;
