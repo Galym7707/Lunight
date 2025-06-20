@@ -74,7 +74,21 @@ document.addEventListener('DOMContentLoaded', function() {
             testimonial_role_2: "Artist, Sami Art Studio",
             testimonial_name_3: "Marat O.",
             testimonial_role_3: "Entrepreneur, Kaz Legal Bot",
-            2025: "© 2025 Lunight. All rights reserved."
+            2025: "© 2025 Lunight. All rights reserved.",
+            pricing_title: "Pricing",
+            pricing_card_site_title: "Business Card Website",
+            pricing_card_site_desc: "Frontend only (HTML + CSS + JS)",
+            pricing_card_site_price: "30,000 ₸",
+            pricing_card_simple_backend_title: "Simple Backend",
+            pricing_card_simple_backend_desc: "Contact form, email sending",
+            pricing_card_simple_backend_price: "+ 15,000 ₸",
+            pricing_card_db_backend_title: "Backend with Database",
+            pricing_card_db_backend_desc: "For example, MongoDB",
+            pricing_card_db_backend_price: "+ 20,000 ₸",
+            pricing_card_admin_title: "Admin Panel, Logic, Authorization",
+            pricing_card_admin_desc: "Advanced functionality",
+            pricing_card_admin_price: "+ 35,000 ₸ and up",
+            pricing_note: "The final price depends on complexity and requirements — I will estimate it for you for free!"
         },
         ru: {
             nav_services: "Услуги",
@@ -111,7 +125,21 @@ document.addEventListener('DOMContentLoaded', function() {
             testimonial_role_2: "Художник Sami Art Studio",
             testimonial_name_3: "Марат О.",
             testimonial_role_3: "Предприниматель Kaz Legal Bot",
-            2025: "© 2025 Lunight. Все права защищены."
+            2025: "© 2025 Lunight. Все права защищены.",
+            pricing_title: "Цены",
+            pricing_card_site_title: "Сайт-визитка",
+            pricing_card_site_desc: "Только фронтенд (HTML + CSS + JS)",
+            pricing_card_site_price: "30 000 тг",
+            pricing_card_simple_backend_title: "Простой бэкенд",
+            pricing_card_simple_backend_desc: "Форма обратной связи, email",
+            pricing_card_simple_backend_price: "+ 15 000 тг",
+            pricing_card_db_backend_title: "Бэкенд с базой данных",
+            pricing_card_db_backend_desc: "Например, MongoDB",
+            pricing_card_db_backend_price: "+ 20 000 тг",
+            pricing_card_admin_title: "Админ-панель, логика, авторизация",
+            pricing_card_admin_desc: "Расширенный функционал",
+            pricing_card_admin_price: "+ 35 000 тг и выше",
+            pricing_note: "Цена зависит от сложности и пожеланий — рассчитаю финальную стоимость бесплатно!"
         },
         kz: {
             nav_services: "Қызметтер",
@@ -148,7 +176,21 @@ document.addEventListener('DOMContentLoaded', function() {
             testimonial_role_2: "Суретші, Sami Art Studio",
             testimonial_name_3: "Марат О.",
             testimonial_role_3: "Кәсіпкер, Kaz Legal Bot",
-            2025: "© 2025 Lunight. Барлық құқықтар қорғалған."
+            2025: "© 2025 Lunight. Барлық құқықтар қорғалған.",
+            pricing_title: "Бағалар",
+            pricing_card_site_title: "Визитка-сайт",
+            pricing_card_site_desc: "Тек фронтенд (HTML + CSS + JS)",
+            pricing_card_site_price: "30 000 ₸",
+            pricing_card_simple_backend_title: "Қарапайым бэкенд",
+            pricing_card_simple_backend_desc: "Кері байланыс формасы, email жіберу",
+            pricing_card_simple_backend_price: "+ 15 000 ₸",
+            pricing_card_db_backend_title: "Дерекқорлы бэкенд",
+            pricing_card_db_backend_desc: "Мысалы, MongoDB",
+            pricing_card_db_backend_price: "+ 20 000 ₸",
+            pricing_card_admin_title: "Админ-панель, логика, авторизация",
+            pricing_card_admin_desc: "Кеңейтілген функционал",
+            pricing_card_admin_price: "+ 35 000 ₸ және жоғары",
+            pricing_note: "Қорытынды баға күрделілікке және талаптарға байланысты — нақты сметаны тегін шығарамын!"
         }
     };
 
